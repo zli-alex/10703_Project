@@ -1,0 +1,7 @@
+# Modal launcher interpreter. This is a compatibility port, not PyTorch 1.6.
+numpy==1.26.4
+PyYAML==6.0.2
+easydict==1.13
+tqdm==4.66.5
+pillow==10.4.0
+torch==2.4.1+cu118

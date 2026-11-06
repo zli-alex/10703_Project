@@ -1,0 +1,3 @@
+case,song_id,record_id,audio_sample_rate_hz,audio_channels,audio_seconds,music_frames,music_channels_stored,music_channels_consumed,feature_rate_hz,feature_duration_minus_audio_ms,motion_frames,motion_channels,motion_seconds,full_song_music_beats,audit_seconds,audit_music_beats,audit_mean_joint_speed_source_units_per_s,arrays_finite,source_hash_verified,on_upstream_exclusion_list
+A,mHO5,gHO_sBM_cAll_d20_mHO5_ch01,48000,2,32.0,1920,438,55,60,0.0,426,72,7.1,49,4,7,0.7160672253905901,True,True,False
+B,mJB5,gJB_sBM_cAll_d08_mJB5_ch01,48000,2,29.538458,1773,438,55,60,11.5417,443,72,7.383333,63,4,8,1.2676418094453918,True,True,False

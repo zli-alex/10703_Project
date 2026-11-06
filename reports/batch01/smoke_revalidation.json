@@ -1,0 +1,9 @@
+{
+  "source_run": "smokeB-20261106T204747Z",
+  "failures": [],
+  "passed": true,
+  "roundtrip_max_abs_error": 5.960464477539063e-08,
+  "rtol": 1e-05,
+  "atol": 1e-05,
+  "original_manifest_preserved": true
+}

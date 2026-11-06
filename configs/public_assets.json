@@ -1,0 +1,20 @@
+{
+  "upstream_commit": "cc90b98bff81c9709570db413c9610c2562e27ca",
+  "archives": {
+    "bailandopp": {
+      "drive_id": "1jepf20XuplVSGEfwaPaqwniyl4styvqa",
+      "name": "bailandopp_weights.zip",
+      "reported_bytes": 1262673648
+    },
+    "bailando_original": {
+      "drive_id": "1Fi0TIiBV6EQAQrBU0IOnlke2Nu4IcutC",
+      "name": "experiments.zip",
+      "reported_bytes": 1157842658
+    },
+    "preprocessed_data": {
+      "drive_id": "1EGJeBE1fE59ByjxR_-ipwV6Dz-Cx-stT",
+      "name": "data.zip",
+      "reported_bytes": 4103564785
+    }
+  }
+}

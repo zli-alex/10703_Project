@@ -1,0 +1,30 @@
+# Local environments and Python caches
+.venv/
+.conda/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+.DS_Store
+
+# Upstream checkout is pinned in the project manifest/docs, not vendored.
+third_party/
+
+# Downloaded assets and generated large artifacts
+data/
+assets/
+checkpoints/
+runs/
+*.pt
+*.pth
+*.ckpt
+
+# Local credentials
+.env
+.env.*
+!.env.example
+.modal.toml
+
+# Transient inventory bookkeeping
+.asset_inventory.lock
+*.json.tmp

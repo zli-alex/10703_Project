@@ -1,0 +1,66 @@
+{
+  "purpose": "Batch 01 step B: one supervised ++ inference smoke test",
+  "upstream_commit": "cc90b98bff81c9709570db413c9610c2562e27ca",
+  "song_case": "A",
+  "song_id": "mHO5",
+  "record_id": "gHO_sBM_cAll_d20_mHO5_ch01",
+  "frame_rate_hz": 60,
+  "generation_seconds": 20,
+  "native_music_frames": 1200,
+  "policy_feature_slice": [0, 55],
+  "codebook_size": 512,
+  "motion_record": "assets/preprocessed_data/data/aistpp_test_full_wav/gHO_sBM_cAll_d20_mHO5_ch01.json",
+  "external_features": "data/batch01/music_feat_60fps/mHO5.json",
+  "audio": "assets/audio/mHO5.wav",
+  "policy": {
+    "path": "assets/bailandopp/cc_gpt_music_trans/ckpt/epoch_400.pt",
+    "sha256": "ed84ccd47d861c9b8a8a61a60a67aa3b8cbb59c928487daec1fdb65190b02da2",
+    "filename_epoch": 400,
+    "stored_epoch": 440,
+    "stored_class": "CrossCondGPT2MW",
+    "sampling": "CrossCondGPT2MW.sample top-1, shift unset, eval mode"
+  },
+  "position_decoder": {
+    "path": "assets/bailando_original/experiments/sep_vqvae_root/ckpt/epoch_500.pt",
+    "sha256": "35670f42a3b3092438f73f0af3ace7b52e318a8b5c00b2b05c92078176b21716",
+    "filename_epoch": 500,
+    "stored_epoch": 500,
+    "stored_class": "SepVQVAER"
+  },
+  "released_loader": {
+    "source": "tpami_bailandopp/utils/functional.py:load_test_data_aist",
+    "move": 8,
+    "rotmat": false,
+    "external_wav_rate": 1,
+    "music_ds_rate": 1,
+    "music_relative_rate": 1,
+    "ds_rate": 8,
+    "wav_padding_config": 5,
+    "wav_padding_frames": 40,
+    "root_zeroed_before_encode": false,
+    "root_zero_note": "Supervised mc_gpt_all.eval encodes the loader pose unchanged. The RL training loop zeros the root before encode; this smoke test does not."
+  },
+  "expected_shapes": {
+    "real_motion_frames": 426,
+    "padded_motion_frames": 432,
+    "padded_music_frames": 1281,
+    "cond_frames_after_drop8": 1273,
+    "generated_code_steps": 149,
+    "total_codes_including_init": 150,
+    "decoded_frames": 1200,
+    "padding_note": "The released divisible-length loop always appends one extra music_move block. With music_move 1, a 1200-frame crop becomes 1200 + 40 left zeros + 1 repeated frame + 40 right zeros."
+  },
+  "modal": {
+    "gpu": "T4",
+    "timeout_seconds": 900,
+    "retries": 0,
+    "cpu": 2.0,
+    "memory_mib": 8192,
+    "volume_name": "bailandopp-batch01",
+    "app_name": "bailandopp-batch01-smoke",
+    "setup_allowance_usd": 5.0,
+    "first_batch_allowance_usd": 10.0,
+    "referenced_t4_usd_per_hour": 0.5904
+  },
+  "seed": 42
+}

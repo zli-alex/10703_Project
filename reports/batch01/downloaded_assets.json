@@ -1,0 +1,34 @@
+[
+  {
+    "archive": "bailandopp",
+    "member": "cc_gpt_music_trans/ckpt/epoch_400.pt",
+    "path": "assets/bailandopp/cc_gpt_music_trans/ckpt/epoch_400.pt",
+    "bytes": 455528241,
+    "sha256": "ed84ccd47d861c9b8a8a61a60a67aa3b8cbb59c928487daec1fdb65190b02da2",
+    "zip_crc_verified": true
+  },
+  {
+    "archive": "bailando_original",
+    "member": "experiments/sep_vqvae_root/ckpt/epoch_500.pt",
+    "path": "assets/bailando_original/experiments/sep_vqvae_root/ckpt/epoch_500.pt",
+    "bytes": 262495255,
+    "sha256": "35670f42a3b3092438f73f0af3ace7b52e318a8b5c00b2b05c92078176b21716",
+    "zip_crc_verified": true
+  },
+  {
+    "archive": "preprocessed_data",
+    "member": "data/aistpp_test_full_wav/gHO_sBM_cAll_d20_mHO5_ch01.json",
+    "path": "assets/preprocessed_data/data/aistpp_test_full_wav/gHO_sBM_cAll_d20_mHO5_ch01.json",
+    "bytes": 18873771,
+    "sha256": "265593173d455e4c227ba2c5dd4464f211104113f05ce95a3c4192ed490557a4",
+    "zip_crc_verified": true
+  },
+  {
+    "archive": "preprocessed_data",
+    "member": "data/aistpp_test_full_wav/gJB_sBM_cAll_d08_mJB5_ch01.json",
+    "path": "assets/preprocessed_data/data/aistpp_test_full_wav/gJB_sBM_cAll_d08_mJB5_ch01.json",
+    "bytes": 18130668,
+    "sha256": "6bd678d47b8996e3a93e3bfce4d15e82eb58edeed50b2d611edac644d67535a5",
+    "zip_crc_verified": true
+  }
+]

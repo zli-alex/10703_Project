@@ -1,0 +1,54 @@
+[
+  {
+    "case": "A-original",
+    "code_disagreement_fraction": 0.0,
+    "root_relative_position_rmse": 0.0,
+    "mean_joint_speed": 0.4684603214263916,
+    "rms_jerk": 242.252197265625,
+    "mean_music_beat_to_speed_minimum_seconds": 0.15098039215686276,
+    "music_beats_within_100ms_fraction": 0.35294117647058826,
+    "all_codes_equal_original": true,
+    "mean_original_A_beat_to_minimum_seconds": 0.15098039215686274,
+    "unique_upper_codes": 42,
+    "unique_lower_codes": 33
+  },
+  {
+    "case": "A-repeat",
+    "code_disagreement_fraction": 0.0,
+    "root_relative_position_rmse": 0.0,
+    "mean_joint_speed": 0.4684603214263916,
+    "rms_jerk": 242.252197265625,
+    "mean_music_beat_to_speed_minimum_seconds": 0.15098039215686276,
+    "music_beats_within_100ms_fraction": 0.35294117647058826,
+    "all_codes_equal_original": true,
+    "mean_original_A_beat_to_minimum_seconds": 0.15098039215686274,
+    "unique_upper_codes": 42,
+    "unique_lower_codes": 33
+  },
+  {
+    "case": "B-swap",
+    "code_disagreement_fraction": 1.0,
+    "root_relative_position_rmse": 0.22376172244548798,
+    "mean_joint_speed": 1.009994626045227,
+    "rms_jerk": 529.76806640625,
+    "mean_music_beat_to_speed_minimum_seconds": 0.20227272727272724,
+    "music_beats_within_100ms_fraction": 0.3181818181818182,
+    "all_codes_equal_original": false,
+    "mean_original_A_beat_to_minimum_seconds": 0.1764705882352941,
+    "unique_upper_codes": 43,
+    "unique_lower_codes": 47
+  },
+  {
+    "case": "A-shift",
+    "code_disagreement_fraction": 1.0,
+    "root_relative_position_rmse": 0.16327014565467834,
+    "mean_joint_speed": 0.869357168674469,
+    "rms_jerk": 406.8570861816406,
+    "mean_music_beat_to_speed_minimum_seconds": 0.1176470588235294,
+    "music_beats_within_100ms_fraction": 0.5294117647058824,
+    "all_codes_equal_original": false,
+    "mean_original_A_beat_to_minimum_seconds": 0.16862745098039214,
+    "unique_upper_codes": 48,
+    "unique_lower_codes": 52
+  }
+]

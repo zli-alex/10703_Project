@@ -1,0 +1,9 @@
+# Python 3.8 subprocess. Isolated from Modal's launcher interpreter.
+# Torch is the historical Bailando++ pin. The wheel bundles the CUDA 10.1 runtime.
+pip==24.0
+numpy==1.19.5
+PyYAML==5.4.1
+easydict==1.9
+tqdm==4.64.1
+Pillow==8.4.0
+torch==1.6.0+cu101

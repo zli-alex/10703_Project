@@ -1,0 +1,57 @@
+{
+  "upstream_commit": "cc90b98bff81c9709570db413c9610c2562e27ca",
+  "baseline": "Bailando++ released supervised policy with position reward decoder",
+  "policy": {
+    "path": "assets/bailandopp/cc_gpt_music_trans/ckpt/epoch_400.pt",
+    "archive": "bailandopp",
+    "sha256": "ed84ccd47d861c9b8a8a61a60a67aa3b8cbb59c928487daec1fdb65190b02da2",
+    "bytes": 455528241,
+    "filename_epoch": 400,
+    "stored_epoch": 440,
+    "stored_policy_class": "CrossCondGPT2MW",
+    "target_rl_policy_class": "CrossCondGPT2MWAC",
+    "critic_parameters_present": false,
+    "state_entries": 269,
+    "metadata_report": "reports/batch01/supervised_checkpoint_metadata.json"
+  },
+  "position_decoder": {
+    "path": "assets/bailando_original/experiments/sep_vqvae_root/ckpt/epoch_500.pt",
+    "archive": "bailando_original",
+    "sha256": "35670f42a3b3092438f73f0af3ace7b52e318a8b5c00b2b05c92078176b21716",
+    "bytes": 262495255,
+    "filename_epoch": 500,
+    "stored_epoch": 500,
+    "stored_model_class": "SepVQVAER",
+    "state_entries": 228,
+    "metadata_report": "reports/batch01/position_decoder_metadata.json"
+  },
+  "validation": {
+    "zip_crc_verified": true,
+    "storage_byte_lengths_verified": true,
+    "shared_policy_config_differences": [
+      "name: CrossCondGPT2MW -> CrossCondGPT2MWAC"
+    ],
+    "shared_decoder_config_differences": [],
+    "torch_model_load_passed": "cpu_strict_pytorch_2.15_2026-11-06",
+    "forward_pass_passed": "t4_pytorch_1.6.0_cu101_smokeB-20261106T204747Z",
+    "note": "CPU strict load matched every tensor. It used a CUDA no-op and did not sample or decode. Preserve the filename/stored-epoch discrepancy. GPU inference is blocked on credit balance and expiration."
+  },
+  "dataset": {
+    "aist_application_status": "submitted_confirmed_by_user_2026-11-06",
+    "download_status": "two_motion_records_and_matching_wavs_downloaded",
+    "candidate_song_ids": [
+      "mHO5",
+      "mJB5"
+    ],
+    "candidate_motion_members": [
+      "data/aistpp_test_full_wav/gHO_sBM_cAll_d20_mHO5_ch01.json",
+      "data/aistpp_test_full_wav/gJB_sBM_cAll_d08_mJB5_ch01.json"
+    ],
+    "candidates_validated": true,
+    "dedicated_60hz_feature_directory_in_archive": false,
+    "note": "Original 438-channel native features are preserved; policy consumes first 55. Shared real-motion audit is 2\u20136 s; music-only generation remains 20 s. Perceptual synchronization and model loading remain pending.",
+    "native_60hz_embedded_features_verified": true,
+    "data_manifest": "configs/batch01_data.json",
+    "validation_report": "reports/batch01/data_validation.md"
+  }
+}
