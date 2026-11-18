@@ -1,0 +1,108 @@
+{
+  "source_run": "runs/batch03/pilot-20261117T062722443178Z/evaluation",
+  "frames": 1768,
+  "seconds": 29.466666666666665,
+  "training_seeds": 1,
+  "starts_per_song": 2,
+  "decoding": "greedy",
+  "groups": {
+    "adaptation": {
+      "supervised": {
+        "pooled": 2.1575327555338544,
+        "within_song_across_starts": 1.1233917872111003,
+        "cross_song_only": 2.4160679976145425,
+        "within_song_pairs": 3,
+        "cross_song_pairs": 12
+      },
+      "epoch5": {
+        "pooled": 1.8676314989725749,
+        "within_song_across_starts": 1.3051787217458088,
+        "cross_song_only": 2.0082446932792664,
+        "within_song_pairs": 3,
+        "cross_song_pairs": 12
+      },
+      "percent_change": {
+        "pooled": -13.436702447168503,
+        "within_song_across_starts": 16.18197111677373,
+        "cross_song_only": -16.879628584043683
+      }
+    },
+    "held_out_from_rl": {
+      "supervised": {
+        "pooled": 3.780928734938304,
+        "within_song_across_starts": 2.281342109044393,
+        "cross_song_only": 4.155825391411781,
+        "within_song_pairs": 3,
+        "cross_song_pairs": 12
+      },
+      "epoch5": {
+        "pooled": 3.4588049252827964,
+        "within_song_across_starts": 2.7609967390696206,
+        "cross_song_only": 3.63325697183609,
+        "within_song_pairs": 3,
+        "cross_song_pairs": 12
+      },
+      "percent_change": {
+        "pooled": -8.519700640714767,
+        "within_song_across_starts": 21.02510746299884,
+        "cross_song_only": -12.574359371681131
+      }
+    }
+  },
+  "songs": [
+    {
+      "song": "mHO5",
+      "split": "adaptation",
+      "supervised": 1.1326488256454468,
+      "epoch5": 1.0097479820251465,
+      "delta": -0.12290084362030029
+    },
+    {
+      "song": "mJB5",
+      "split": "adaptation",
+      "supervised": 1.2781344652175903,
+      "epoch5": 1.9463961124420166,
+      "delta": 0.6682616472244263
+    },
+    {
+      "song": "mPO1",
+      "split": "adaptation",
+      "supervised": 0.9593920707702637,
+      "epoch5": 0.9593920707702637,
+      "delta": 0.0
+    },
+    {
+      "song": "mBR0",
+      "split": "held_out_from_rl",
+      "supervised": 1.504550814628601,
+      "epoch5": 2.832127571105957,
+      "delta": 1.327576756477356
+    },
+    {
+      "song": "mJS3",
+      "split": "held_out_from_rl",
+      "supervised": 1.6269599199295044,
+      "epoch5": 1.8021652698516846,
+      "delta": 0.17520534992218018
+    },
+    {
+      "song": "mKR2",
+      "split": "held_out_from_rl",
+      "supervised": 3.7125155925750732,
+      "epoch5": 3.6486973762512207,
+      "delta": -0.06381821632385254
+    }
+  ],
+  "source_sha256": {
+    "motions.npz": "a4392cf38f0dceddf60c60fd601bb21fa21741c2aa9c079b513fae993d94cf59",
+    "evaluation.json": "e76e7fb3375057c79dbecea4b9be4758fee19a6752cdbe5060e9a72f86b7264c"
+  },
+  "validation": "All recomputed pooled and within-song values match batch03 within rtol=1e-6.",
+  "limitations": [
+    "Two starts give one within-song pair; this is not fixed-start stochastic diversity.",
+    "The 48-dimensional speed summary loses ordering, pose semantics, and musical phrasing.",
+    "Distances are in source units/s; larger distance alone does not establish better dance.",
+    "Each group has three songs; genre and RL assignment coincide.",
+    "One training seed and an already-inspected evaluation set support exploratory conclusions only."
+  ]
+}

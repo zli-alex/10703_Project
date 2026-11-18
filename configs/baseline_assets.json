@@ -34,7 +34,7 @@
     "shared_decoder_config_differences": [],
     "torch_model_load_passed": "cpu_strict_pytorch_2.15_2026-11-06",
     "forward_pass_passed": "t4_pytorch_1.6.0_cu101_smokeB-20261106T204747Z",
-    "note": "CPU strict load matched every tensor. It used a CUDA no-op and did not sample or decode. Preserve the filename/stored-epoch discrepancy. GPU inference is blocked on credit balance and expiration."
+    "note": "CPU strict load and T4 legacy runtime inference passed. Preserve filename/stored-epoch discrepancy. Steps C/D/E validate diagnostics and forward traces; no RL optimizer update has been run."
   },
   "dataset": {
     "aist_application_status": "submitted_confirmed_by_user_2026-11-06",
@@ -49,7 +49,7 @@
     ],
     "candidates_validated": true,
     "dedicated_60hz_feature_directory_in_archive": false,
-    "note": "Original 438-channel native features are preserved; policy consumes first 55. Shared real-motion audit is 2\u20136 s; music-only generation remains 20 s. Perceptual synchronization and model loading remain pending.",
+    "note": "Original 438-channel native features are preserved; policy consumes first 55. Shared real-motion audit is 2\u20136 s; music-only generation remains 20 s. Model loading passed; human perceptual synchronization review remains pending.",
     "native_60hz_embedded_features_verified": true,
     "data_manifest": "configs/batch01_data.json",
     "validation_report": "reports/batch01/data_validation.md"

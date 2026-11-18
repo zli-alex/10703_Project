@@ -1,0 +1,27 @@
+{
+  "worker_seconds": {
+    "validation": 33.917201458,
+    "bin-42": 1329.57854732,
+    "bin-43": 1335.55462522,
+    "bas-42": 1331.668400594,
+    "bas-43": 1335.0823549609995,
+    "test": 187.58169729699998
+  },
+  "phase_seconds": {
+    "training": 4877.257742458002,
+    "evaluation": 527.096933452,
+    "setup_checkpoint_and_checks": 149.0281509399971
+  },
+  "phase_compute_estimates_usd": {
+    "training": 1.0141986516677945,
+    "evaluation": 0.10960687899504644,
+    "setup_checkpoint_and_checks": 0.030989576053800504
+  },
+  "app_id": "ap-AWQ5zKf2hW5Okeb659QqrN",
+  "metered_resources_usd": {
+    "Memory": "0.10366493",
+    "T4": "0.95566105",
+    "CPU": "0.15322972"
+  },
+  "metered_total_usd": "1.21255570"
+}

@@ -1,0 +1,179 @@
+{
+  "provenance": {
+    "baseline_sha256": {
+      "policy": "ed84ccd47d861c9b8a8a61a60a67aa3b8cbb59c928487daec1fdb65190b02da2",
+      "position_decoder": "35670f42a3b3092438f73f0af3ace7b52e318a8b5c00b2b05c92078176b21716"
+    },
+    "rollouts": [
+      {
+        "song_id": "mHO5",
+        "native_frames": 1920,
+        "codes": 240,
+        "initial_codes": [
+          436,
+          289
+        ],
+        "rollout_seconds": 4.3149256519999994
+      },
+      {
+        "song_id": "mJB5",
+        "native_frames": 1773,
+        "codes": 221,
+        "initial_codes": [
+          179,
+          387
+        ],
+        "rollout_seconds": 3.580208953000003
+      }
+    ],
+    "batch_size": 44,
+    "upstream_commit": "cc90b98bff81c9709570db413c9610c2562e27ca"
+  },
+  "windows_by_song": {
+    "mHO5": 211,
+    "mJB5": 192
+  },
+  "updates": [
+    {
+      "minibatch": 0,
+      "branch": "actor",
+      "size": 44,
+      "loss": 0.5292966961860657,
+      "masked_reward_mean": 2.5,
+      "scoring_seconds": 0.9405906149999979,
+      "update_seconds": 1.7169062640000021,
+      "heads": {
+        "actor": {
+          "changed": true,
+          "gradients": {
+            "present": 100,
+            "nonzero": 100
+          }
+        },
+        "critic": {
+          "changed": false,
+          "gradients": {
+            "present": 0,
+            "nonzero": 0
+          }
+        }
+      }
+    },
+    {
+      "minibatch": 1,
+      "branch": "actor",
+      "size": 44,
+      "loss": 0.37367066740989685,
+      "masked_reward_mean": 2.045454502105713,
+      "scoring_seconds": 0.07206180100000381,
+      "update_seconds": 1.7397787009999988
+    },
+    {
+      "minibatch": 2,
+      "branch": "actor",
+      "size": 44,
+      "loss": 0.3489670753479004,
+      "masked_reward_mean": 2.2727272510528564,
+      "scoring_seconds": 0.09519557000000134,
+      "update_seconds": 1.7353613169999988
+    },
+    {
+      "minibatch": 3,
+      "branch": "actor",
+      "size": 44,
+      "loss": 1.1018797159194946,
+      "masked_reward_mean": 2.6056337356567383,
+      "scoring_seconds": 0.0964632060000028,
+      "update_seconds": 1.765726469999997
+    },
+    {
+      "minibatch": 4,
+      "branch": "actor",
+      "size": 44,
+      "loss": 0.909769594669342,
+      "masked_reward_mean": 3.409090995788574,
+      "scoring_seconds": 0.09567158099999773,
+      "update_seconds": 1.7810802620000032
+    },
+    {
+      "minibatch": 5,
+      "branch": "critic",
+      "size": 44,
+      "loss": 25.16118049621582,
+      "masked_reward_mean": 2.7272727489471436,
+      "scoring_seconds": 0.07763618599999944,
+      "update_seconds": 1.1498850119999986,
+      "heads": {
+        "actor": {
+          "changed": true,
+          "gradients": {
+            "present": 100,
+            "nonzero": 0
+          }
+        },
+        "critic": {
+          "changed": true,
+          "gradients": {
+            "present": 52,
+            "nonzero": 52
+          }
+        }
+      }
+    },
+    {
+      "minibatch": 6,
+      "branch": "critic",
+      "size": 44,
+      "loss": 25.120845794677734,
+      "masked_reward_mean": 2.045454502105713,
+      "scoring_seconds": 0.08221094700000009,
+      "update_seconds": 1.1555512229999962
+    },
+    {
+      "minibatch": 7,
+      "branch": "critic",
+      "size": 44,
+      "loss": 25.163440704345703,
+      "masked_reward_mean": 2.183098554611206,
+      "scoring_seconds": 0.0961523100000008,
+      "update_seconds": 1.1653698980000016
+    },
+    {
+      "minibatch": 8,
+      "branch": "critic",
+      "size": 44,
+      "loss": 25.06494140625,
+      "masked_reward_mean": 2.746478796005249,
+      "scoring_seconds": 0.09717048400000294,
+      "update_seconds": 1.168584869
+    },
+    {
+      "minibatch": 9,
+      "branch": "critic",
+      "size": 7,
+      "loss": 25.06523895263672,
+      "masked_reward_mean": 3.5714285373687744,
+      "scoring_seconds": 1.1555459169999978,
+      "update_seconds": 0.20393914400000313
+    }
+  ],
+  "dataset_seconds": 0.01018292499999518,
+  "train_wall_seconds": 19.687292479,
+  "checkpoint": {
+    "bytes": 1057384893,
+    "save_seconds": 3.127761554999992,
+    "reload_and_compare_seconds": 3.5067554320000056,
+    "reload_pass": true
+  },
+  "frozen_unchanged": {
+    "music_encoder": true,
+    "gpt_base": true,
+    "decoder": true
+  },
+  "worker_seconds": 61.232497551,
+  "peak_training_bytes": 10800466944,
+  "peak_allocated_bytes": 10800466944,
+  "torch": "1.6.0+cu101",
+  "gpu": "Tesla T4",
+  "data_loader_workers": 0
+}

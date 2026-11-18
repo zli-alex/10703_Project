@@ -1,0 +1,137 @@
+{
+  "source": {
+    "drive_id": "1jepf20XuplVSGEfwaPaqwniyl4styvqa",
+    "name": "bailandopp_weights.zip",
+    "reported_bytes": 1262673648
+  },
+  "members": [
+    {
+      "name": "sep_vqvae_root_mix_w_vel_acc/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "sep_vqvae_root_mix_w_vel_acc/.DS_Store",
+      "bytes": 6148,
+      "compressed_bytes": 196,
+      "crc32": "9f28e863",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "__MACOSX/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "__MACOSX/sep_vqvae_root_mix_w_vel_acc/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "__MACOSX/sep_vqvae_root_mix_w_vel_acc/._.DS_Store",
+      "bytes": 120,
+      "compressed_bytes": 53,
+      "crc32": "38c0880b",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "sep_vqvae_root_mix_w_vel_acc/ckpt/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "sep_vqvae_root_mix_w_vel_acc/ckpt/epoch_500.pt",
+      "bytes": 370916527,
+      "compressed_bytes": 342819515,
+      "crc32": "794f5fbb",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "__MACOSX/._sep_vqvae_root_mix_w_vel_acc",
+      "bytes": 210,
+      "compressed_bytes": 109,
+      "crc32": "a802de96",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "cc_gpt_music_trans/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "cc_gpt_music_trans/ckpt/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "cc_gpt_music_trans/ckpt/epoch_400.pt",
+      "bytes": 455528241,
+      "compressed_bytes": 420453098,
+      "crc32": "dd86220a",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "__MACOSX/._cc_gpt_music_trans",
+      "bytes": 210,
+      "compressed_bytes": 109,
+      "crc32": "a802de96",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "actor_critic/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "actor_critic/ckpt/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "actor_critic/ckpt/epoch_10.pt",
+      "bytes": 540627091,
+      "compressed_bytes": 499397699,
+      "crc32": "79d08b5e",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "__MACOSX/._actor_critic",
+      "bytes": 210,
+      "compressed_bytes": 109,
+      "crc32": "a802de96",
+      "method": 8,
+      "directory": false
+    }
+  ]
+}

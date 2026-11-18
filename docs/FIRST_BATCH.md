@@ -1,8 +1,9 @@
 # First batch: establish a runnable Bailando++ baseline and test two hypotheses
 
-Status: step B passed on one T4. Run `smokeB-20261106T204747Z` produced a 20-second
-mHO5 skeleton clip. Credit expiration is still not exposed by the billing API;
-applied credits covered the run and billed cost is $0.
+Status: steps A–E execution and diagnostics complete. See
+[batch closure](../reports/batch01/summary.md) for remaining human review and
+independent-update gates. Latest meter is $0.07039; billed cost is $0.
+Credit balance and expiration are not exposed by the billing API.
 See [setup status](../reports/batch01/assets_and_environment.md). Updated November 6, 2026.
 Working directory: `/Users/zhengfeili/2026_Fall/10703/10703_Project`.
 
@@ -66,8 +67,9 @@ diagnostics accordingly and leave the supervised replication gate unresolved.
   context/padding. Assert finite arrays and valid code ranges; save all timestamps.
 - [x] Decode through the position path. Save raw reward input separately from
   global positions used for rendering. Check root velocity integration and units.
-- [x] Measure cold-start/load time, generation/decode/reward time separately,
-  peak allocated/reserved GPU memory, GPU type, and estimated/actual cost.
+- [x] Record worker load, generation/decode times, peak allocated/reserved GPU
+  memory, GPU type, and reported cost. Full container cold-start time was not
+  recorded; reward timing is measured separately in step D.
 - [x] Produce a simple skeleton MP4 with synchronized source audio. If audio is
   inaccessible, label it silent and leave audio-sync validation pending.
 
@@ -117,6 +119,10 @@ timing respond, separately.
 
 ## D. Minimal reward audit — reuse cached motion
 
+Completed: `rewardD-20261106T215539Z`. See `reports/batch01/reward_audit.md`.
+Seven controls scored with unchanged CUDA reward; independent bin checks pass.
+The table, timelines, and seven audio clips are available; step E remains pending.
+
 Use song A and the shared four-second interval **[2, 6) seconds**, native frames
 **[120, 360)**, for every row below. This differs from the generated-only music
 experiment's [5, 15) interval because the real excerpt is only 7.1 seconds long.
@@ -158,13 +164,18 @@ examples selected to illustrate agreement or disagreement with motion quality.
 
 ## E. Export one trace and close the batch
 
-- [ ] Export one complete training-sized window and one later overlap window
+Completed: `traceE-20261106T221045Z`. See `reports/batch01/rollout_trace.md`
+and `reports/batch01/summary.md`. This is a forward trace, not an optimizer update.
+
+- [x] Export one complete training-sized window and one later overlap window
   from A-original, including music padding, codes, decoded frames, beats, and mask.
-- [ ] Draw the ++ pipeline including its music Transformer and the separate
+- [x] Draw the ++ pipeline including its music Transformer and the separate
   position-reward versus rotation-rendering paths. Record which native frames
   belong to one selected action and its reward; note music look-ahead.
-- [ ] Reconcile spend against $10; list time/memory estimates and remaining credit.
-- [ ] Produce `reports/batch01/summary.md` with a go/no-go decision for each gate,
+- [x] Reconcile reported spend against $10 and list time/memory measurements.
+  Workspace and itemized snapshots are both retained with their discrepancy;
+  remaining credit balance/expiration cannot be verified from the API.
+- [x] Produce `reports/batch01/summary.md` with a go/no-go decision for each gate,
   links to evidence, and any requested teammate checks. The decision is about
   valid execution and interpretation, not whether the hypothesis was confirmed.
 

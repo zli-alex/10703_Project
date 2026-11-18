@@ -1,0 +1,4947 @@
+{
+  "checkpoint": "assets/bailando_original/experiments/sep_vqvae_root/ckpt/epoch_500.pt",
+  "checkpoint_keys": [
+    "model",
+    "config",
+    "epoch"
+  ],
+  "stored_epoch": 500,
+  "config": {
+    "structure": {
+      "name": "SepVQVAER",
+      "up_half": {
+        "levels": 1,
+        "downs_t": [
+          3
+        ],
+        "strides_t": [
+          2
+        ],
+        "emb_width": 512,
+        "l_bins": 512,
+        "l_mu": 0.99,
+        "commit": 0.02,
+        "hvqvae_multipliers": [
+          1
+        ],
+        "width": 512,
+        "depth": 3,
+        "m_conv": 1.0,
+        "dilation_growth_rate": 3,
+        "sample_length": 240,
+        "use_bottleneck": true,
+        "joint_channel": 3,
+        "vqvae_reverse_decoder_dilation": true,
+        "dilation_cycle": null
+      },
+      "down_half": {
+        "levels": 1,
+        "downs_t": [
+          3
+        ],
+        "strides_t": [
+          2
+        ],
+        "emb_width": 512,
+        "l_bins": 512,
+        "l_mu": 0.99,
+        "commit": 0.02,
+        "hvqvae_multipliers": [
+          1
+        ],
+        "width": 512,
+        "depth": 3,
+        "m_conv": 1.0,
+        "dilation_growth_rate": 3,
+        "sample_length": 240,
+        "use_bottleneck": true,
+        "joint_channel": 3,
+        "acc": 1.0,
+        "vqvae_reverse_decoder_dilation": true,
+        "dilation_cycle": null
+      },
+      "use_bottleneck": true,
+      "joint_channel": 3,
+      "l_bins": 512
+    },
+    "loss_weight": {
+      "mse_weight": 1
+    },
+    "optimizer": {
+      "type": "Adam",
+      "kwargs": {
+        "lr": 5e-05,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "weight_decay": 0
+      },
+      "schedular_kwargs": {
+        "gamma": 0.1,
+        "milestones": [
+          100,
+          200
+        ]
+      }
+    },
+    "data": {
+      "name": "aist",
+      "train_dir": "/mnt/lustre/lisiyao1/dance/dance2/DanceRevolution/data/aistpp_train_wav",
+      "test_dir": "/mnt/lustre/lisiyao1/dance/dance2/DanceRevolution/data/aistpp_val_wav",
+      "seq_len": 240,
+      "data_type": "None"
+    },
+    "testing": {
+      "height": 1280,
+      "width": 720,
+      "ckpt_epoch": 300
+    },
+    "expname": "sep_vqvae_root_global_vel_wav_acc_batch8_0.9",
+    "epoch": 500,
+    "batch_size": 8,
+    "save_per_epochs": 20,
+    "test_freq": 20,
+    "log_per_updates": 1,
+    "seed": 42,
+    "rotmat": false,
+    "cuda": true,
+    "global_vel": true,
+    "ds_rate": 8,
+    "move_train": 8,
+    "sample_code_length": 150,
+    "analysis_array": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "analysis_sequence": [
+      [
+        1,
+        2,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        2,
+        3,
+        2,
+        3
+      ]
+    ],
+    "init_weight": "/mnt/lustre/lisiyao1/dance/bailando/experiments/sep_vqvae_l1_d8_local_c512_di3_3e-5_wav_beta0.5_vel0.5_acc0.5_ignore_lbin512/ckpt/epoch_500.pt",
+    "config": "configs/motion_sep_vqvae_root_lbin512_c512_di3_velacc3e-5_wav_acc_batch8_beta0.9.yaml",
+    "train": true,
+    "eval": false,
+    "visgt": false,
+    "anl": false,
+    "sample": false
+  },
+  "state_entries": 228,
+  "state_families": {
+    "vqvae_up": 91,
+    "vqvae_down": 137
+  },
+  "tensor_elements_including_buffers": 65592907,
+  "storage_size_checks_passed": true,
+  "model_load_tested": false,
+  "tensors": {
+    "module.vqvae_up.encoders.0.level_blocks.0.model.0.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        45,
+        4
+      ],
+      "stride": [
+        180,
+        4,
+        1
+      ],
+      "numel": 92160,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694435248",
+        "device": "cuda:0",
+        "elements": 92160
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.0.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036587800512",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.0.1.model.0.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036588834768",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.0.1.model.0.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036588907568",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.0.1.model.0.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036588843696",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.0.1.model.0.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589293632",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.0.1.model.1.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036572103104",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.0.1.model.1.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589843520",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.0.1.model.1.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036588246720",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.0.1.model.1.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036588607984",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.0.1.model.2.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694438704",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.0.1.model.2.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036593544672",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.0.1.model.2.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036588983392",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.0.1.model.2.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589040304",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.1.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        4
+      ],
+      "stride": [
+        2048,
+        4,
+        1
+      ],
+      "numel": 1048576,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036588097808",
+        "device": "cuda:0",
+        "elements": 1048576
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.1.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036593545120",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.1.1.model.0.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036587850336",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.1.1.model.0.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589360144",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.1.1.model.0.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589868800",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.1.1.model.0.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036593549984",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.1.1.model.1.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036593548320",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.1.1.model.1.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036588788432",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.1.1.model.1.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036588063936",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.1.1.model.1.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036590017664",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.1.1.model.2.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036587501600",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.1.1.model.2.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036588051776",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.1.1.model.2.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036587712688",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.1.1.model.2.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036587742912",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.2.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        4
+      ],
+      "stride": [
+        2048,
+        4,
+        1
+      ],
+      "numel": 1048576,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036588373920",
+        "device": "cuda:0",
+        "elements": 1048576
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.2.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036588416096",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.2.1.model.0.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036588584320",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.2.1.model.0.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589073552",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.2.1.model.0.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589908768",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.2.1.model.0.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589791088",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.2.1.model.1.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589178784",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.2.1.model.1.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589809344",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.2.1.model.1.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036588637872",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.2.1.model.1.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589963536",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.2.1.model.2.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036580580192",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.2.1.model.2.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036588595744",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.2.1.model.2.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036583070000",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.2.1.model.2.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036588799520",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036583330464",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.encoders.0.level_blocks.0.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036587962240",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036584422976",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036580580288",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.1.0.model.0.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036585832592",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.1.0.model.0.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036583070096",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.1.0.model.0.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589459568",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.1.0.model.0.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589459664",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.1.0.model.1.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589880400",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.1.0.model.1.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036593565152",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.1.0.model.1.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589229696",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.1.0.model.1.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036590020784",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.1.0.model.2.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589517840",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.1.0.model.2.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036583330560",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.1.0.model.2.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036587156752",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.1.0.model.2.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036584423072",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.1.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        4
+      ],
+      "stride": [
+        2048,
+        4,
+        1
+      ],
+      "numel": 1048576,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036587256464",
+        "device": "cuda:0",
+        "elements": 1048576
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.1.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589880496",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.2.0.model.0.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589162464",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.2.0.model.0.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036584563008",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.2.0.model.0.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036587759184",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.2.0.model.0.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036588314944",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.2.0.model.1.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036576793408",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.2.0.model.1.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036586072848",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.2.0.model.1.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036579177920",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.2.0.model.1.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036577197216",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.2.0.model.2.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036583197712",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.2.0.model.2.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589162560",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.2.0.model.2.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036587298448",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.2.0.model.2.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589835856",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.2.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        4
+      ],
+      "stride": [
+        2048,
+        4,
+        1
+      ],
+      "numel": 1048576,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036582493248",
+        "device": "cuda:0",
+        "elements": 1048576
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.2.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036577240640",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.3.0.model.0.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036586279424",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.3.0.model.0.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589234112",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.3.0.model.0.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036581190320",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.3.0.model.0.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036581419984",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.3.0.model.1.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036578928048",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.3.0.model.1.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036586571184",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.3.0.model.1.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036582587584",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.3.0.model.1.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036582844096",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.3.0.model.2.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036588670144",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.3.0.model.2.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036586492448",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.3.0.model.2.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036588598768",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.3.0.model.2.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589802704",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.3.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        4
+      ],
+      "stride": [
+        2048,
+        4,
+        1
+      ],
+      "numel": 1048576,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036586629664",
+        "device": "cuda:0",
+        "elements": 1048576
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.level_blocks.0.model.3.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036578928144",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.out.weight": {
+      "kind": "tensor",
+      "shape": [
+        45,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 69120,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036579582464",
+        "device": "cuda:0",
+        "elements": 69120
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.decoders.0.out.bias": {
+      "kind": "tensor",
+      "shape": [
+        45
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 45,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036582853648",
+        "device": "cuda:0",
+        "elements": 45
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_up.bottleneck.level_blocks.0.k": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512
+      ],
+      "stride": [
+        512,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694881968",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.0.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        27,
+        4
+      ],
+      "stride": [
+        108,
+        4,
+        1
+      ],
+      "numel": 55296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036582561216",
+        "device": "cuda:0",
+        "elements": 55296
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.0.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036705852320",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.0.1.model.0.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589504432",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.0.1.model.0.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036593610288",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.0.1.model.0.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036705685040",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.0.1.model.0.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036705866848",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.0.1.model.1.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036705908176",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.0.1.model.1.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036705898784",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.0.1.model.1.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036588378320",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.0.1.model.1.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036705907200",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.0.1.model.2.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036705881872",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.0.1.model.2.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036705885104",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.0.1.model.2.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036705885616",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.0.1.model.2.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036705890176",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.1.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        4
+      ],
+      "stride": [
+        2048,
+        4,
+        1
+      ],
+      "numel": 1048576,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036705888656",
+        "device": "cuda:0",
+        "elements": 1048576
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.1.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036705889216",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.1.1.model.0.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036705870864",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.1.1.model.0.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036705874000",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.1.1.model.0.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589517936",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.1.1.model.0.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036705877744",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.1.1.model.1.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694036096",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.1.1.model.1.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694035792",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.1.1.model.1.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694038800",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.1.1.model.1.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694039616",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.1.1.model.2.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036589229792",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.1.1.model.2.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694043280",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.1.1.model.2.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694039312",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.1.1.model.2.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694046672",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.2.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        4
+      ],
+      "stride": [
+        2048,
+        4,
+        1
+      ],
+      "numel": 1048576,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694046768",
+        "device": "cuda:0",
+        "elements": 1048576
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.2.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694046864",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.2.1.model.0.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694046960",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.2.1.model.0.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694050624",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.2.1.model.0.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694053808",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.2.1.model.0.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694057744",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.2.1.model.1.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694057840",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.2.1.model.1.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694057936",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.2.1.model.1.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694058032",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.2.1.model.1.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694061696",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.2.1.model.2.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694064880",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.2.1.model.2.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694068816",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.2.1.model.2.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694068912",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.2.1.model.2.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694069008",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694069104",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.encoders.0.level_blocks.0.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694072768",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694075952",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694083648",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.1.0.model.0.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694080144",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.1.0.model.0.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694095552",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.1.0.model.0.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694098736",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.1.0.model.0.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694102672",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.1.0.model.1.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694102768",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.1.0.model.1.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694091600",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.1.0.model.1.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694091696",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.1.0.model.1.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694091792",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.1.0.model.2.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694091888",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.1.0.model.2.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694083744",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.1.0.model.2.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694087952",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.1.0.model.2.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694083840",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.1.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        4
+      ],
+      "stride": [
+        2048,
+        4,
+        1
+      ],
+      "numel": 1048576,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694087232",
+        "device": "cuda:0",
+        "elements": 1048576
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.1.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694102864",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.2.0.model.0.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694102960",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.2.0.model.0.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694124816",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.2.0.model.0.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694124912",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.2.0.model.0.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694125008",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.2.0.model.1.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694125104",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.2.0.model.1.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694113936",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.2.0.model.1.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694114032",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.2.0.model.1.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694117696",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.2.0.model.2.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694120880",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.2.0.model.2.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694106624",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.2.0.model.2.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694109808",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.2.0.model.2.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694113744",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.2.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        4
+      ],
+      "stride": [
+        2048,
+        4,
+        1
+      ],
+      "numel": 1048576,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694113840",
+        "device": "cuda:0",
+        "elements": 1048576
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.2.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694128768",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.3.0.model.0.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694131952",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.3.0.model.0.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694147152",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.3.0.model.0.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694147248",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.3.0.model.0.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694150912",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.3.0.model.1.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694154096",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.3.0.model.1.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694139840",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.3.0.model.1.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694143024",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.3.0.model.1.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694146960",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.3.0.model.2.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694147056",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.3.0.model.2.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694135888",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.3.0.model.2.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694135984",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.3.0.model.2.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694136080",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.3.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        4
+      ],
+      "stride": [
+        2048,
+        4,
+        1
+      ],
+      "numel": 1048576,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694136176",
+        "device": "cuda:0",
+        "elements": 1048576
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.level_blocks.0.model.3.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694158032",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.out.weight": {
+      "kind": "tensor",
+      "shape": [
+        27,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 41472,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694158128",
+        "device": "cuda:0",
+        "elements": 41472
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders.0.out.bias": {
+      "kind": "tensor",
+      "shape": [
+        27
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 27,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694158224",
+        "device": "cuda:0",
+        "elements": 27
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694158320",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694161984",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.1.0.model.0.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694332016",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.1.0.model.0.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694348560",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.1.0.model.0.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694348656",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.1.0.model.0.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694348752",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.1.0.model.1.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694348848",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.1.0.model.1.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694341520",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.1.0.model.1.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694336848",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.1.0.model.1.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036593606704",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.1.0.model.2.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694344864",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.1.0.model.2.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694336208",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.1.0.model.2.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694337616",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.1.0.model.2.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694336304",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.1.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        4
+      ],
+      "stride": [
+        2048,
+        4,
+        1
+      ],
+      "numel": 1048576,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694336400",
+        "device": "cuda:0",
+        "elements": 1048576
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.1.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694356288",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.2.0.model.0.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694354832",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.2.0.model.0.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694371024",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.2.0.model.0.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694371120",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.2.0.model.0.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694378560",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.2.0.model.1.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694377104",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.2.0.model.1.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694164592",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.2.0.model.1.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694367136",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.2.0.model.1.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694370832",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.2.0.model.2.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694370928",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.2.0.model.2.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694354928",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.2.0.model.2.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694355024",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.2.0.model.2.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694359888",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.2.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        4
+      ],
+      "stride": [
+        2048,
+        4,
+        1
+      ],
+      "numel": 1048576,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694363536",
+        "device": "cuda:0",
+        "elements": 1048576
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.2.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694377200",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.3.0.model.0.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694377296",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.3.0.model.0.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694400832",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.3.0.model.0.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694399376",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.3.0.model.0.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694399472",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.3.0.model.1.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694399568",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.3.0.model.1.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694393104",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.3.0.model.1.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694393200",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.3.0.model.1.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694393296",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.3.0.model.2.model.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 786432,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694393392",
+        "device": "cuda:0",
+        "elements": 786432
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.3.0.model.2.model.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694382160",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.3.0.model.2.model.3.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "stride": [
+        512,
+        1,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694385808",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.3.0.model.2.model.3.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036593622336",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.3.1.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512,
+        4
+      ],
+      "stride": [
+        2048,
+        4,
+        1
+      ],
+      "numel": 1048576,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694389408",
+        "device": "cuda:0",
+        "elements": 1048576
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.level_blocks.0.model.3.1.bias": {
+      "kind": "tensor",
+      "shape": [
+        512
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 512,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694404432",
+        "device": "cuda:0",
+        "elements": 512
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.out.weight": {
+      "kind": "tensor",
+      "shape": [
+        3,
+        512,
+        3
+      ],
+      "stride": [
+        1536,
+        3,
+        1
+      ],
+      "numel": 4608,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694408080",
+        "device": "cuda:0",
+        "elements": 4608
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.decoders_root.0.out.bias": {
+      "kind": "tensor",
+      "shape": [
+        3
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 3,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036705869776",
+        "device": "cuda:0",
+        "elements": 3
+      },
+      "requires_grad": false
+    },
+    "module.vqvae_down.bottleneck.level_blocks.0.k": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        512
+      ],
+      "stride": [
+        512,
+        1
+      ],
+      "numel": 262144,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140036694415376",
+        "device": "cuda:0",
+        "elements": 262144
+      },
+      "requires_grad": false
+    }
+  }
+}

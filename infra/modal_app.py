@@ -52,6 +52,7 @@ image = (
         "pillow==10.4.0",
     )
     .pip_install("torch==2.4.1+cu118", index_url="https://download.pytorch.org/whl/cu118")
+    .run_commands("/opt/legacy/bin/pip install scipy==1.5.4")
     .add_local_dir(PROJECT / "infra", remote_path="/root/project/infra", ignore=["**/__pycache__/**"])
     .add_local_dir(PROJECT / "scripts", remote_path="/root/project/scripts", ignore=["**/__pycache__/**"])
     .add_local_dir(PROJECT / "configs", remote_path="/root/project/configs")

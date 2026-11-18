@@ -1,0 +1,196 @@
+{
+  "run_name": "traceE-20261106T221045Z",
+  "batch_description": "Diagnostic batch of 2 windows (not released batch64); window 0 all-masked, window 20 single-masked.",
+  "hash_checks": {
+    "critic_initial": {
+      "path": "/Users/zhengfeili/2026_Fall/10703/10703_Project/runs/batch01/traceE-20261106T221045Z/critic_initial.pt",
+      "expected": "b4d6646b8305aae9b256bd2db9bee72c869e4d394081239f7a15924395579b46",
+      "actual": "b4d6646b8305aae9b256bd2db9bee72c869e4d394081239f7a15924395579b46",
+      "match": true
+    },
+    "policy": {
+      "path": "/Users/zhengfeili/2026_Fall/10703/10703_Project/assets/bailandopp/cc_gpt_music_trans/ckpt/epoch_400.pt",
+      "expected": "ed84ccd47d861c9b8a8a61a60a67aa3b8cbb59c928487daec1fdb65190b02da2",
+      "actual": "ed84ccd47d861c9b8a8a61a60a67aa3b8cbb59c928487daec1fdb65190b02da2",
+      "match": true
+    },
+    "decoder": {
+      "path": "/Users/zhengfeili/2026_Fall/10703/10703_Project/assets/bailando_original/experiments/sep_vqvae_root/ckpt/epoch_500.pt",
+      "expected": "35670f42a3b3092438f73f0af3ace7b52e318a8b5c00b2b05c92078176b21716",
+      "actual": "35670f42a3b3092438f73f0af3ace7b52e318a8b5c00b2b05c92078176b21716",
+      "match": true
+    },
+    "window_000_npz": {
+      "path": "/Users/zhengfeili/2026_Fall/10703/10703_Project/runs/batch01/traceE-20261106T221045Z/window_000.npz",
+      "sha256": "f3f4597c1987428e095942353ce9a672eedd9cf28faddc7640aa3a2ed454c1af"
+    },
+    "window_020_npz": {
+      "path": "/Users/zhengfeili/2026_Fall/10703/10703_Project/runs/batch01/traceE-20261106T221045Z/window_020.npz",
+      "sha256": "61712f0537faffdd1ac895ead183266b68cffb57ee558f1f11b334e17a76b8b0"
+    }
+  },
+  "per_window_losses": [
+    {
+      "window_start": 0,
+      "actor_loss": 1.9054403622979417,
+      "critic_loss": 25.726478147614785,
+      "mask_sum": 28,
+      "td_max_abs_err_vs_saved": 2.384185791015625e-07,
+      "nll_max_abs_err_vs_saved": 1.8872101748002024e-07,
+      "td_agreement_pass": true,
+      "nll_agreement_pass": true
+    },
+    {
+      "window_start": 20,
+      "actor_loss": -0.25760917104952735,
+      "critic_loss": 25.298664187946724,
+      "mask_sum": 1,
+      "td_max_abs_err_vs_saved": 2.384185791015625e-07,
+      "nll_max_abs_err_vs_saved": 1.8372667014432409e-06,
+      "td_agreement_pass": true,
+      "nll_agreement_pass": true
+    }
+  ],
+  "stacked_batch": {
+    "num_windows": 2,
+    "actor_loss": 1.8308524473549255,
+    "critic_loss": 25.51257116778076,
+    "note": "diagnostic batch of 2; not released batch64"
+  },
+  "schedule": [
+    {
+      "epoch": 1,
+      "batch_i": 0,
+      "branch": "actor"
+    },
+    {
+      "epoch": 1,
+      "batch_i": 1,
+      "branch": "actor"
+    },
+    {
+      "epoch": 1,
+      "batch_i": 2,
+      "branch": "actor"
+    },
+    {
+      "epoch": 1,
+      "batch_i": 3,
+      "branch": "actor"
+    },
+    {
+      "epoch": 1,
+      "batch_i": 4,
+      "branch": "actor"
+    },
+    {
+      "epoch": 1,
+      "batch_i": 5,
+      "branch": "critic"
+    },
+    {
+      "epoch": 1,
+      "batch_i": 6,
+      "branch": "critic"
+    },
+    {
+      "epoch": 1,
+      "batch_i": 7,
+      "branch": "critic"
+    },
+    {
+      "epoch": 1,
+      "batch_i": 8,
+      "branch": "critic"
+    },
+    {
+      "epoch": 1,
+      "batch_i": 9,
+      "branch": "critic"
+    },
+    {
+      "epoch": 2,
+      "batch_i": 0,
+      "branch": "actor"
+    },
+    {
+      "epoch": 2,
+      "batch_i": 1,
+      "branch": "actor"
+    },
+    {
+      "epoch": 2,
+      "batch_i": 2,
+      "branch": "actor"
+    },
+    {
+      "epoch": 2,
+      "batch_i": 3,
+      "branch": "actor"
+    },
+    {
+      "epoch": 2,
+      "batch_i": 4,
+      "branch": "actor"
+    },
+    {
+      "epoch": 2,
+      "batch_i": 5,
+      "branch": "critic"
+    },
+    {
+      "epoch": 2,
+      "batch_i": 6,
+      "branch": "critic"
+    },
+    {
+      "epoch": 2,
+      "batch_i": 7,
+      "branch": "critic"
+    },
+    {
+      "epoch": 2,
+      "batch_i": 8,
+      "branch": "critic"
+    },
+    {
+      "epoch": 2,
+      "batch_i": 9,
+      "branch": "critic"
+    }
+  ],
+  "greedy_checks": {
+    "window_0": {
+      "original_context_greedy_matches_all_28": true,
+      "teacher_forced_mismatch_count": 3
+    },
+    "window_20": {
+      "original_context_greedy_matches_all_28": true,
+      "teacher_forced_mismatch_count": 27
+    }
+  },
+  "worked_example": {
+    "window": 20,
+    "local_action": 27,
+    "target_upper": 432,
+    "target_lower": 411,
+    "reward": -5.0,
+    "value_current": 1.0434991121292114,
+    "value_next": 1.343184232711792,
+    "indep_td_target": -3.656815767288208,
+    "saved_td_target": -3.656815767288208,
+    "indep_delta": -4.700314879417419,
+    "indep_nll": 0.054806790110504267,
+    "saved_nll": 0.05480668321251869,
+    "nll_max_abs_err": 1.0689798557450558e-07,
+    "mask": 1.0,
+    "this_action_actor_contribution": -0.2576091710495107
+  },
+  "tolerances": {
+    "atol": 1e-06,
+    "rtol": 1e-05
+  },
+  "all_hash_checks_pass": true,
+  "all_td_checks_pass": true,
+  "all_nll_checks_pass": true
+}

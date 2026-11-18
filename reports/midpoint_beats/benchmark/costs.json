@@ -1,0 +1,24 @@
+{
+  "source": "Modal usage report for November 17, 2026, filtered to the two midpoint benchmark apps",
+  "attempts": [
+    {
+      "app": "ap-Lppz2FKqJWQncJGh7pMbHE",
+      "run": "midbeats-20261117T212817896036Z",
+      "status": "released-forward differential failed",
+      "cpu_usd": 0.00068325,
+      "memory_usd": 0.00046224,
+      "gpu_usd": 0.00426130,
+      "compute_usd": 0.00540679
+    },
+    {
+      "app": "ap-hKeQcqMqlN0IM1ciCg9ceI",
+      "run": "midbeats-20261117T213508645736Z",
+      "status": "passed",
+      "cpu_usd": 0.00231245,
+      "memory_usd": 0.00156445,
+      "gpu_usd": 0.01442224,
+      "compute_usd": 0.01829914
+    }
+  ],
+  "compute_usd": 0.02370593
+}

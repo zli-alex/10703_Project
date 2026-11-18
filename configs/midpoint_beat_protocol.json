@@ -1,0 +1,32 @@
+{
+  "status": "benchmark_pending",
+  "objectives": ["bin", "bas"],
+  "training_seeds": [42, 43],
+  "critic_initialization_seed": 42,
+  "batch": 16,
+  "rounds": 25,
+  "validation_rounds": [0, 5, 10, 15, 20, 25],
+  "validation_draws": 2,
+  "test_draws": 3,
+  "eval_seed": 10703,
+  "reward_screen_seed": 10704,
+  "reward_screen_tie_tolerance": 0.01,
+  "scored_frames": 1200,
+  "prefix_frames": 8,
+  "fps": 60,
+  "temperature": 1.0,
+  "actor_lr": 0.00001,
+  "critic_lr": 0.00001,
+  "adam_betas": [0.5, 0.999],
+  "kl_coefficient": 0,
+  "body_consistency_weight": 0,
+  "discount": 1,
+  "validation_precedes_test": true,
+  "budget": {
+    "benchmark_timeout_seconds": 900,
+    "benchmark_compute_cap_usd": 0.5,
+    "comparison_compute_cap_usd": null,
+    "single_container": true,
+    "automatic_retries": 0
+  }
+}

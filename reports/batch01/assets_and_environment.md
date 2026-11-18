@@ -1,6 +1,8 @@
 # First-step status: source, assets, and environment
 
-Updated November 6, 2026. The T4 smoke test has run. See `docs/MODAL.md` for teammate setup.
+Updated November 6, 2026. Steps A–E execution and diagnostics are complete.
+See `summary.md` for current spending, remaining human review, and update-verification gates.
+See `docs/MODAL.md` for teammate setup; its shared-workspace assumptions still apply.
 
 ## Readiness table
 
@@ -15,7 +17,7 @@ Updated November 6, 2026. The T4 smoke test has run. See `docs/MODAL.md` for tea
 | Position VQ-VAE checkpoint | Downloaded and metadata-verified | `SepVQVAER`, stored epoch 500; expected codebook sizes and shared configuration verified. |
 | Rotation decoder checkpoint | Archive presence verified; download deferred | Not needed for first position-only clip. |
 | Motion/features/audio | Two development pairs downloaded and validated | Native 60 Hz features preserved; real motion is 7.1/7.383 s. Shared reward-audit interval is [2, 6) s. See data validation report. |
-| Modal login and cycle usage | Verified for workspace `zhengfel` | Token created November 6, 2026. A payment method is required for T4. Credits covered the runs: metered $0.03039, billed $0. |
+| Modal login and cycle usage | Verified for workspace `zhengfel` | Token created November 6, 2026. A payment method is required for T4. Credits covered the runs: latest meter $0.07039, billed $0. See the sanitized cost ledger. |
 | Credit expiration | Not exposed by the API | Applied credits are visible. Remaining balance and expiration are not. The launch gate allows work while metered cost is under $4. |
 | Remote GPU environment | Built and used | Legacy Python 3.8 / PyTorch 1.6.0+cu101 ran the smoke test on one T4. A PyTorch 2.4.1 port is also in the image and was not needed. |
 | Model loading and inference | Passed | Run `smokeB-20261106T204747Z`: strict loads, 20-second mHO5 clip. See the smoke-test report. |

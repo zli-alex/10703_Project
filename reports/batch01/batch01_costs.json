@@ -1,0 +1,36 @@
+{
+  "checked_at_utc": "2026-11-06T22:12:49.675812+00:00",
+  "workspace_metered_usd": "0.07039054",
+  "workspace_billed_usd": "0E-8",
+  "workspace_credits_applied_usd": "0.07000000",
+  "first_batch_ceiling_usd": "10",
+  "conservative_headroom_using_workspace_meter_usd": "9.92960946",
+  "credit_balance_remaining": "not exposed; do not infer from approximate $250 grant",
+  "credit_expiration": "not exposed",
+  "itemized_app_costs_usd": {
+    "bailandopp-batch01-music": {
+      "Memory": "0.00181333",
+      "T4": "0.01671662",
+      "CPU": "0.00284913"
+    },
+    "bailandopp-batch01-smoke": {
+      "Memory": "0.00199058",
+      "CPU": "0.01383356",
+      "Network Egress": "0.00038749",
+      "T4": "0.00491677"
+    },
+    "bailandopp-batch01-trace": {
+      "Memory": "0.00124444",
+      "T4": "0.01147216",
+      "CPU": "0.00183943"
+    },
+    "bailandopp-batch01-reward": {
+      "Memory": "0.00029111",
+      "T4": "0.00262222",
+      "CPU": "0.00052480",
+      "Network Egress": "0.00000305"
+    }
+  },
+  "itemized_project_sum_usd": "0.06050469",
+  "note": "Workspace summary and itemized app report are separate API snapshots and do not reconcile exactly. Retain both without inventing attribution. Includes CPU, memory, GPU, and reported egress; billing can settle later."
+}

@@ -1,0 +1,962 @@
+{
+  "groups": {
+    "adaptation": {
+      "before": {
+        "mean_reward": 3.3148567279179892,
+        "hit_fraction": 0.25510204081632654,
+        "motion_to_music_ms": 226.2992384939671,
+        "music_coverage_100ms": 0.3510959939531368,
+        "mean_joint_speed": 0.7222610910733541,
+        "rms_acceleration": 8.958144664764404,
+        "rms_jerk": 392.5595152187589,
+        "root_travel": 12.984591166178385,
+        "diversity": 2.1575326919555664,
+        "within_song_start_distance": 1.1233917872111003
+      },
+      "after": {
+        "mean_reward": 3.2771493196487427,
+        "hit_fraction": 0.2418745275888133,
+        "motion_to_music_ms": 227.55140854709398,
+        "music_coverage_100ms": 0.3862433862433862,
+        "mean_joint_speed": 0.7085090577602386,
+        "rms_acceleration": 8.73071813583374,
+        "rms_jerk": 388.8024193700662,
+        "root_travel": 13.669679005940756,
+        "diversity": 1.8676316738128662,
+        "within_song_start_distance": 1.3051787217458088
+      },
+      "delta": {
+        "mean_reward": -0.03770740826924642,
+        "hit_fraction": -0.013227513227513227,
+        "motion_to_music_ms": 1.2521700531268607,
+        "music_coverage_100ms": 0.035147392290249435,
+        "mean_joint_speed": -0.013752033313115438,
+        "rms_acceleration": -0.22742652893066406,
+        "rms_jerk": -3.7570958486926997,
+        "root_travel": 0.6850878397623698
+      }
+    },
+    "held_out_from_rl": {
+      "before": {
+        "mean_reward": 3.367798328399658,
+        "hit_fraction": 0.25141268075639595,
+        "motion_to_music_ms": 260.1351075388163,
+        "music_coverage_100ms": 0.38506859473489063,
+        "mean_joint_speed": 0.6478602836529413,
+        "rms_acceleration": 8.462309122085571,
+        "rms_jerk": 351.47725059901524,
+        "root_travel": 20.755433003107708,
+        "diversity": 3.78092885017395,
+        "within_song_start_distance": 2.281342109044393
+      },
+      "after": {
+        "mean_reward": 3.3672839403152466,
+        "hit_fraction": 0.25193054010629096,
+        "motion_to_music_ms": 270.47073882425747,
+        "music_coverage_100ms": 0.39954517364973424,
+        "mean_joint_speed": 0.712353045741717,
+        "rms_acceleration": 8.974475383758545,
+        "rms_jerk": 369.0770423146965,
+        "root_travel": 21.513722101847332,
+        "diversity": 3.4588050842285156,
+        "within_song_start_distance": 2.7609967390696206
+      },
+      "delta": {
+        "mean_reward": -0.0005143880844116211,
+        "hit_fraction": 0.0005178593498949419,
+        "motion_to_music_ms": 10.335631285441124,
+        "music_coverage_100ms": 0.014476578914843663,
+        "mean_joint_speed": 0.06449276208877563,
+        "rms_acceleration": 0.5121662616729736,
+        "rms_jerk": 17.599791715681246,
+        "root_travel": 0.758289098739624
+      }
+    }
+  },
+  "songs": [
+    {
+      "song": "mHO5",
+      "split": "adaptation",
+      "before": {
+        "mean_reward": 3.5,
+        "hit_fraction": 0.2653061224489796,
+        "motion_to_music_ms": 236.2990561351217,
+        "music_coverage_100ms": 0.3469387755102041,
+        "mean_joint_speed": 0.6880025267601013,
+        "rms_acceleration": 8.291878700256348,
+        "rms_jerk": 355.7406561973834,
+        "root_travel": 13.038807392120361
+      },
+      "after": {
+        "mean_reward": 3.5,
+        "hit_fraction": 0.2653061224489796,
+        "motion_to_music_ms": 220.23772204806687,
+        "music_coverage_100ms": 0.4285714285714286,
+        "mean_joint_speed": 0.7924268543720245,
+        "rms_acceleration": 9.731181621551514,
+        "rms_jerk": 413.79136418547535,
+        "root_travel": 13.186571598052979
+      },
+      "delta": {
+        "mean_reward": 0.0,
+        "hit_fraction": 0.0,
+        "motion_to_music_ms": -16.06133408705483,
+        "music_coverage_100ms": 0.0816326530612245,
+        "mean_joint_speed": 0.10442432761192322,
+        "rms_acceleration": 1.439302921295166,
+        "rms_jerk": 58.05070798809194,
+        "root_travel": 0.1477642059326172
+      },
+      "before_hits": 26,
+      "after_hits": 26,
+      "music_beat_bins": 98,
+      "start_distance": [
+        1.1326488256454468,
+        1.0097479820251465
+      ]
+    },
+    {
+      "song": "mJB5",
+      "split": "adaptation",
+      "before": {
+        "mean_reward": 2.7828054428100586,
+        "hit_fraction": 0.2222222222222222,
+        "motion_to_music_ms": 124.2214663643235,
+        "music_coverage_100ms": 0.32539682539682535,
+        "mean_joint_speed": 0.9402649998664856,
+        "rms_acceleration": 11.541839599609375,
+        "rms_jerk": 506.78233572323967,
+        "root_travel": 15.459908962249756
+      },
+      "after": {
+        "mean_reward": 2.6696832180023193,
+        "hit_fraction": 0.18253968253968253,
+        "motion_to_music_ms": 114.34108527131784,
+        "music_coverage_100ms": 0.3492063492063492,
+        "mean_joint_speed": 0.7862100899219513,
+        "rms_acceleration": 9.443172931671143,
+        "rms_jerk": 436.7555363539449,
+        "root_travel": 17.31261157989502
+      },
+      "delta": {
+        "mean_reward": -0.11312222480773926,
+        "hit_fraction": -0.03968253968253968,
+        "motion_to_music_ms": -9.880381093005667,
+        "music_coverage_100ms": 0.023809523809523808,
+        "mean_joint_speed": -0.1540549099445343,
+        "rms_acceleration": -2.0986666679382324,
+        "rms_jerk": -70.02679936929482,
+        "root_travel": 1.8527026176452637
+      },
+      "before_hits": 28,
+      "after_hits": 23,
+      "music_beat_bins": 126,
+      "start_distance": [
+        1.2781344652175903,
+        1.9463961124420166
+      ]
+    },
+    {
+      "song": "mPO1",
+      "split": "adaptation",
+      "before": {
+        "mean_reward": 3.6617647409439087,
+        "hit_fraction": 0.2777777777777778,
+        "motion_to_music_ms": 318.3771929824561,
+        "music_coverage_100ms": 0.38095238095238093,
+        "mean_joint_speed": 0.5385157465934753,
+        "rms_acceleration": 7.04071569442749,
+        "rms_jerk": 315.1555537356537,
+        "root_travel": 10.455057144165039
+      },
+      "after": {
+        "mean_reward": 3.6617647409439087,
+        "hit_fraction": 0.2777777777777778,
+        "motion_to_music_ms": 348.07541832189725,
+        "music_coverage_100ms": 0.38095238095238093,
+        "mean_joint_speed": 0.5468902289867401,
+        "rms_acceleration": 7.0177998542785645,
+        "rms_jerk": 315.86035757077843,
+        "root_travel": 10.509853839874268
+      },
+      "delta": {
+        "mean_reward": 0.0,
+        "hit_fraction": 0.0,
+        "motion_to_music_ms": 29.69822533944108,
+        "music_coverage_100ms": 0.0,
+        "mean_joint_speed": 0.00837448239326477,
+        "rms_acceleration": -0.02291584014892578,
+        "rms_jerk": 0.7048038351247783,
+        "root_travel": 0.054796695709228516
+      },
+      "before_hits": 35,
+      "after_hits": 35,
+      "music_beat_bins": 126,
+      "start_distance": [
+        0.9593920707702637,
+        0.9593920707702637
+      ]
+    },
+    {
+      "song": "mBR0",
+      "split": "held_out_from_rl",
+      "before": {
+        "mean_reward": 3.4691357612609863,
+        "hit_fraction": 0.28735632183908044,
+        "motion_to_music_ms": 311.00519079685745,
+        "music_coverage_100ms": 0.45402298850574707,
+        "mean_joint_speed": 1.0823417901992798,
+        "rms_acceleration": 13.691847801208496,
+        "rms_jerk": 531.2830228874772,
+        "root_travel": 28.504776000976562
+      },
+      "after": {
+        "mean_reward": 3.4814815521240234,
+        "hit_fraction": 0.2931034482758621,
+        "motion_to_music_ms": 336.6355244547011,
+        "music_coverage_100ms": 0.4655172413793104,
+        "mean_joint_speed": 1.0336823463439941,
+        "rms_acceleration": 12.405464172363281,
+        "rms_jerk": 479.96626486328046,
+        "root_travel": 27.22623348236084
+      },
+      "delta": {
+        "mean_reward": 0.01234579086303711,
+        "hit_fraction": 0.005747126436781616,
+        "motion_to_music_ms": 25.630333657843636,
+        "music_coverage_100ms": 0.01149425287356326,
+        "mean_joint_speed": -0.048659443855285645,
+        "rms_acceleration": -1.2863836288452148,
+        "rms_jerk": -51.31675802419673,
+        "root_travel": -1.2785425186157227
+      },
+      "before_hits": 50,
+      "after_hits": 51,
+      "music_beat_bins": 174,
+      "start_distance": [
+        1.504550814628601,
+        2.832127571105957
+      ]
+    },
+    {
+      "song": "mJS3",
+      "split": "held_out_from_rl",
+      "before": {
+        "mean_reward": 3.1481481790542603,
+        "hit_fraction": 0.1935483870967742,
+        "motion_to_music_ms": 201.9933049300061,
+        "music_coverage_100ms": 0.31451612903225806,
+        "mean_joint_speed": 0.447884738445282,
+        "rms_acceleration": 6.398526430130005,
+        "rms_jerk": 286.2484256987902,
+        "root_travel": 6.761860609054565
+      },
+      "after": {
+        "mean_reward": 3.0925925970077515,
+        "hit_fraction": 0.16935483870967744,
+        "motion_to_music_ms": 208.88980113118046,
+        "music_coverage_100ms": 0.3064516129032258,
+        "mean_joint_speed": 0.6607049405574799,
+        "rms_acceleration": 8.990215539932251,
+        "rms_jerk": 378.36370079354856,
+        "root_travel": 11.426665306091309
+      },
+      "delta": {
+        "mean_reward": -0.05555558204650879,
+        "hit_fraction": -0.02419354838709678,
+        "motion_to_music_ms": 6.896496201174372,
+        "music_coverage_100ms": -0.008064516129032251,
+        "mean_joint_speed": 0.21282020211219788,
+        "rms_acceleration": 2.591689109802246,
+        "rms_jerk": 92.11527509475836,
+        "root_travel": 4.664804697036743
+      },
+      "before_hits": 24,
+      "after_hits": 21,
+      "music_beat_bins": 124,
+      "start_distance": [
+        1.6269599199295044,
+        1.8021652698516846
+      ]
+    },
+    {
+      "song": "mKR2",
+      "split": "held_out_from_rl",
+      "before": {
+        "mean_reward": 3.486111044883728,
+        "hit_fraction": 0.2733333333333333,
+        "motion_to_music_ms": 267.4068268895855,
+        "music_coverage_100ms": 0.3866666666666667,
+        "mean_joint_speed": 0.4133543223142624,
+        "rms_acceleration": 5.296553134918213,
+        "rms_jerk": 236.90030321077842,
+        "root_travel": 26.999662399291992
+      },
+      "after": {
+        "mean_reward": 3.527777671813965,
+        "hit_fraction": 0.29333333333333333,
+        "motion_to_music_ms": 265.88689088689085,
+        "music_coverage_100ms": 0.42666666666666664,
+        "mean_joint_speed": 0.44267185032367706,
+        "rms_acceleration": 5.5277464389801025,
+        "rms_jerk": 248.90116128726052,
+        "root_travel": 25.888267517089844
+      },
+      "delta": {
+        "mean_reward": 0.041666626930236816,
+        "hit_fraction": 0.01999999999999999,
+        "motion_to_music_ms": -1.5199360026946351,
+        "music_coverage_100ms": 0.03999999999999998,
+        "mean_joint_speed": 0.029317528009414673,
+        "rms_acceleration": 0.23119330406188965,
+        "rms_jerk": 12.000858076482103,
+        "root_travel": -1.1113948822021484
+      },
+      "before_hits": 41,
+      "after_hits": 44,
+      "music_beat_bins": 150,
+      "start_distance": [
+        3.7125155925750732,
+        3.6486973762512207
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "song": "mHO5",
+      "start": 1,
+      "split": "adaptation",
+      "frames": 1920,
+      "initial_codes": [
+        436,
+        289
+      ],
+      "keys": [
+        "mHO5_I1_supervised",
+        "mHO5_I1_epoch5"
+      ],
+      "before": {
+        "mean_reward": 3.5,
+        "hit_fraction": 0.2653061224489796,
+        "motion_to_music_ms": 245.62841530054644,
+        "music_coverage_100ms": 0.2857142857142857,
+        "mean_joint_speed": 0.6338762640953064,
+        "rms_acceleration": 7.613304138183594,
+        "rms_jerk": 324.15832117435747,
+        "root_travel": 11.837374687194824
+      },
+      "after": {
+        "mean_reward": 3.5,
+        "hit_fraction": 0.2653061224489796,
+        "motion_to_music_ms": 213.50574712643677,
+        "music_coverage_100ms": 0.4489795918367347,
+        "mean_joint_speed": 0.8427249193191528,
+        "rms_acceleration": 10.491909980773926,
+        "rms_jerk": 440.25973715054135,
+        "root_travel": 12.132903099060059
+      },
+      "delta": {
+        "mean_reward": 0.0,
+        "hit_fraction": 0.0,
+        "motion_to_music_ms": -32.12266817410966,
+        "music_coverage_100ms": 0.163265306122449,
+        "mean_joint_speed": 0.20884865522384644,
+        "rms_acceleration": 2.878605842590332,
+        "rms_jerk": 116.10141597618389,
+        "root_travel": 0.2955284118652344
+      },
+      "before_hits": 13,
+      "after_hits": 13,
+      "music_beat_bins": 49,
+      "changed_code_fraction": 0.8326359832635983
+    },
+    {
+      "song": "mHO5",
+      "start": 2,
+      "split": "adaptation",
+      "frames": 1920,
+      "initial_codes": [
+        179,
+        387
+      ],
+      "keys": [
+        "mHO5_I2_supervised",
+        "mHO5_I2_epoch5"
+      ],
+      "before": {
+        "mean_reward": 3.5,
+        "hit_fraction": 0.2653061224489796,
+        "motion_to_music_ms": 226.969696969697,
+        "music_coverage_100ms": 0.40816326530612246,
+        "mean_joint_speed": 0.7421287894248962,
+        "rms_acceleration": 8.970453262329102,
+        "rms_jerk": 387.32299122040934,
+        "root_travel": 14.240240097045898
+      },
+      "after": {
+        "mean_reward": 3.5,
+        "hit_fraction": 0.2653061224489796,
+        "motion_to_music_ms": 226.969696969697,
+        "music_coverage_100ms": 0.40816326530612246,
+        "mean_joint_speed": 0.7421287894248962,
+        "rms_acceleration": 8.970453262329102,
+        "rms_jerk": 387.32299122040934,
+        "root_travel": 14.240240097045898
+      },
+      "delta": {
+        "mean_reward": 0.0,
+        "hit_fraction": 0.0,
+        "motion_to_music_ms": 0.0,
+        "music_coverage_100ms": 0.0,
+        "mean_joint_speed": 0.0,
+        "rms_acceleration": 0.0,
+        "rms_jerk": 0.0,
+        "root_travel": 0.0
+      },
+      "before_hits": 13,
+      "after_hits": 13,
+      "music_beat_bins": 49,
+      "changed_code_fraction": 0.0
+    },
+    {
+      "song": "mJB5",
+      "start": 1,
+      "split": "adaptation",
+      "frames": 1768,
+      "initial_codes": [
+        436,
+        289
+      ],
+      "keys": [
+        "mJB5_I1_supervised",
+        "mJB5_I1_epoch5"
+      ],
+      "before": {
+        "mean_reward": 2.692307710647583,
+        "hit_fraction": 0.19047619047619047,
+        "motion_to_music_ms": 125.85034013605443,
+        "music_coverage_100ms": 0.2857142857142857,
+        "mean_joint_speed": 1.0068638324737549,
+        "rms_acceleration": 12.207472801208496,
+        "rms_jerk": 533.790705711197,
+        "root_travel": 17.987552642822266
+      },
+      "after": {
+        "mean_reward": 2.873303174972534,
+        "hit_fraction": 0.25396825396825395,
+        "motion_to_music_ms": 108.91472868217055,
+        "music_coverage_100ms": 0.3968253968253968,
+        "mean_joint_speed": 0.7040674686431885,
+        "rms_acceleration": 9.363040924072266,
+        "rms_jerk": 421.5297109026204,
+        "root_travel": 12.478261947631836
+      },
+      "delta": {
+        "mean_reward": 0.18099546432495117,
+        "hit_fraction": 0.06349206349206349,
+        "motion_to_music_ms": -16.93561145388388,
+        "music_coverage_100ms": 0.1111111111111111,
+        "mean_joint_speed": -0.3027963638305664,
+        "rms_acceleration": -2.8444318771362305,
+        "rms_jerk": -112.26099480857658,
+        "root_travel": -5.50929069519043
+      },
+      "before_hits": 12,
+      "after_hits": 16,
+      "music_beat_bins": 63,
+      "changed_code_fraction": 0.7181818181818181
+    },
+    {
+      "song": "mJB5",
+      "start": 2,
+      "split": "adaptation",
+      "frames": 1768,
+      "initial_codes": [
+        179,
+        387
+      ],
+      "keys": [
+        "mJB5_I2_supervised",
+        "mJB5_I2_epoch5"
+      ],
+      "before": {
+        "mean_reward": 2.873303174972534,
+        "hit_fraction": 0.25396825396825395,
+        "motion_to_music_ms": 122.59259259259258,
+        "music_coverage_100ms": 0.36507936507936506,
+        "mean_joint_speed": 0.8736661672592163,
+        "rms_acceleration": 10.876206398010254,
+        "rms_jerk": 479.77396573528233,
+        "root_travel": 12.932265281677246
+      },
+      "after": {
+        "mean_reward": 2.4660632610321045,
+        "hit_fraction": 0.1111111111111111,
+        "motion_to_music_ms": 119.76744186046513,
+        "music_coverage_100ms": 0.30158730158730157,
+        "mean_joint_speed": 0.8683527112007141,
+        "rms_acceleration": 9.52330493927002,
+        "rms_jerk": 451.9813618052693,
+        "root_travel": 22.146961212158203
+      },
+      "delta": {
+        "mean_reward": -0.4072399139404297,
+        "hit_fraction": -0.14285714285714285,
+        "motion_to_music_ms": -2.8251507321274545,
+        "music_coverage_100ms": -0.06349206349206349,
+        "mean_joint_speed": -0.005313456058502197,
+        "rms_acceleration": -1.3529014587402344,
+        "rms_jerk": -27.79260393001306,
+        "root_travel": 9.214695930480957
+      },
+      "before_hits": 16,
+      "after_hits": 7,
+      "music_beat_bins": 63,
+      "changed_code_fraction": 0.9454545454545454
+    },
+    {
+      "song": "mPO1",
+      "start": 1,
+      "split": "adaptation",
+      "frames": 2720,
+      "initial_codes": [
+        436,
+        289
+      ],
+      "keys": [
+        "mPO1_I1_supervised",
+        "mPO1_I1_epoch5"
+      ],
+      "before": {
+        "mean_reward": 3.558823585510254,
+        "hit_fraction": 0.2222222222222222,
+        "motion_to_music_ms": 335.0,
+        "music_coverage_100ms": 0.2857142857142857,
+        "mean_joint_speed": 0.5176239013671875,
+        "rms_acceleration": 6.807906150817871,
+        "rms_jerk": 306.81859740193306,
+        "root_travel": 9.733137130737305
+      },
+      "after": {
+        "mean_reward": 3.529411792755127,
+        "hit_fraction": 0.20634920634920634,
+        "motion_to_music_ms": 352.3474178403756,
+        "music_coverage_100ms": 0.2698412698412698,
+        "mean_joint_speed": 0.5518202185630798,
+        "rms_acceleration": 6.952914714813232,
+        "rms_jerk": 315.18976218593355,
+        "root_travel": 10.54956340789795
+      },
+      "delta": {
+        "mean_reward": -0.029411792755126953,
+        "hit_fraction": -0.015873015873015872,
+        "motion_to_music_ms": 17.347417840375613,
+        "music_coverage_100ms": -0.015873015873015872,
+        "mean_joint_speed": 0.034196317195892334,
+        "rms_acceleration": 0.14500856399536133,
+        "rms_jerk": 8.371164784000484,
+        "root_travel": 0.8164262771606445
+      },
+      "before_hits": 14,
+      "after_hits": 13,
+      "music_beat_bins": 63,
+      "changed_code_fraction": 0.24778761061946902
+    },
+    {
+      "song": "mPO1",
+      "start": 2,
+      "split": "adaptation",
+      "frames": 2720,
+      "initial_codes": [
+        179,
+        387
+      ],
+      "keys": [
+        "mPO1_I2_supervised",
+        "mPO1_I2_epoch5"
+      ],
+      "before": {
+        "mean_reward": 3.7647058963775635,
+        "hit_fraction": 0.3333333333333333,
+        "motion_to_music_ms": 301.7543859649123,
+        "music_coverage_100ms": 0.47619047619047616,
+        "mean_joint_speed": 0.5594075918197632,
+        "rms_acceleration": 7.273525238037109,
+        "rms_jerk": 323.4925100693743,
+        "root_travel": 11.176977157592773
+      },
+      "after": {
+        "mean_reward": 3.7941176891326904,
+        "hit_fraction": 0.3492063492063492,
+        "motion_to_music_ms": 343.8034188034188,
+        "music_coverage_100ms": 0.49206349206349204,
+        "mean_joint_speed": 0.5419602394104004,
+        "rms_acceleration": 7.0826849937438965,
+        "rms_jerk": 316.5309529556234,
+        "root_travel": 10.470144271850586
+      },
+      "delta": {
+        "mean_reward": 0.029411792755126953,
+        "hit_fraction": 0.015873015873015872,
+        "motion_to_music_ms": 42.04903283850655,
+        "music_coverage_100ms": 0.015873015873015872,
+        "mean_joint_speed": -0.017447352409362793,
+        "rms_acceleration": -0.1908402442932129,
+        "rms_jerk": -6.961557113750928,
+        "root_travel": -0.7068328857421875
+      },
+      "before_hits": 21,
+      "after_hits": 22,
+      "music_beat_bins": 63,
+      "changed_code_fraction": 0.08112094395280237
+    },
+    {
+      "song": "mBR0",
+      "start": 1,
+      "split": "held_out_from_rl",
+      "frames": 3240,
+      "initial_codes": [
+        436,
+        289
+      ],
+      "keys": [
+        "mBR0_I1_supervised",
+        "mBR0_I1_epoch5"
+      ],
+      "before": {
+        "mean_reward": 3.197530746459961,
+        "hit_fraction": 0.16091954022988506,
+        "motion_to_music_ms": 321.02272727272725,
+        "music_coverage_100ms": 0.3218390804597701,
+        "mean_joint_speed": 1.0626885890960693,
+        "rms_acceleration": 13.976924896240234,
+        "rms_jerk": 565.1547761078785,
+        "root_travel": 26.06409454345703
+      },
+      "after": {
+        "mean_reward": 3.3456790447235107,
+        "hit_fraction": 0.22988505747126436,
+        "motion_to_music_ms": 386.3036303630363,
+        "music_coverage_100ms": 0.39080459770114945,
+        "mean_joint_speed": 0.9002524614334106,
+        "rms_acceleration": 10.383402824401855,
+        "rms_jerk": 433.49539635905336,
+        "root_travel": 25.29653549194336
+      },
+      "delta": {
+        "mean_reward": 0.1481482982635498,
+        "hit_fraction": 0.06896551724137931,
+        "motion_to_music_ms": 65.28090309030904,
+        "music_coverage_100ms": 0.06896551724137934,
+        "mean_joint_speed": -0.1624361276626587,
+        "rms_acceleration": -3.593522071838379,
+        "rms_jerk": -131.6593797488252,
+        "root_travel": -0.7675590515136719
+      },
+      "before_hits": 14,
+      "after_hits": 20,
+      "music_beat_bins": 87,
+      "changed_code_fraction": 0.9777227722772277
+    },
+    {
+      "song": "mBR0",
+      "start": 2,
+      "split": "held_out_from_rl",
+      "frames": 3240,
+      "initial_codes": [
+        179,
+        387
+      ],
+      "keys": [
+        "mBR0_I2_supervised",
+        "mBR0_I2_epoch5"
+      ],
+      "before": {
+        "mean_reward": 3.7407407760620117,
+        "hit_fraction": 0.41379310344827586,
+        "motion_to_music_ms": 300.98765432098764,
+        "music_coverage_100ms": 0.5862068965517241,
+        "mean_joint_speed": 1.1019949913024902,
+        "rms_acceleration": 13.406770706176758,
+        "rms_jerk": 497.41126966707577,
+        "root_travel": 30.945457458496094
+      },
+      "after": {
+        "mean_reward": 3.617284059524536,
+        "hit_fraction": 0.3563218390804598,
+        "motion_to_music_ms": 286.9674185463659,
+        "music_coverage_100ms": 0.5402298850574713,
+        "mean_joint_speed": 1.1671122312545776,
+        "rms_acceleration": 14.427525520324707,
+        "rms_jerk": 526.4371333675075,
+        "root_travel": 29.15593147277832
+      },
+      "delta": {
+        "mean_reward": -0.12345671653747559,
+        "hit_fraction": -0.05747126436781608,
+        "motion_to_music_ms": -14.020235774621767,
+        "music_coverage_100ms": -0.04597701149425282,
+        "mean_joint_speed": 0.0651172399520874,
+        "rms_acceleration": 1.0207548141479492,
+        "rms_jerk": 29.025863700431728,
+        "root_travel": -1.7895259857177734
+      },
+      "before_hits": 36,
+      "after_hits": 31,
+      "music_beat_bins": 87,
+      "changed_code_fraction": 0.6868811881188119
+    },
+    {
+      "song": "mJS3",
+      "start": 1,
+      "split": "held_out_from_rl",
+      "frames": 2160,
+      "initial_codes": [
+        436,
+        289
+      ],
+      "keys": [
+        "mJS3_I1_supervised",
+        "mJS3_I1_epoch5"
+      ],
+      "before": {
+        "mean_reward": 3.185185194015503,
+        "hit_fraction": 0.20967741935483872,
+        "motion_to_music_ms": 183.0188679245283,
+        "music_coverage_100ms": 0.3387096774193548,
+        "mean_joint_speed": 0.3401471972465515,
+        "rms_acceleration": 4.989081859588623,
+        "rms_jerk": 232.3242072451225,
+        "root_travel": 5.07942533493042
+      },
+      "after": {
+        "mean_reward": 3.0370371341705322,
+        "hit_fraction": 0.14516129032258066,
+        "motion_to_music_ms": 197.08994708994712,
+        "music_coverage_100ms": 0.2903225806451613,
+        "mean_joint_speed": 0.5856253504753113,
+        "rms_acceleration": 7.622793674468994,
+        "rms_jerk": 340.5006540098615,
+        "root_travel": 9.985151290893555
+      },
+      "delta": {
+        "mean_reward": -0.1481480598449707,
+        "hit_fraction": -0.06451612903225806,
+        "motion_to_music_ms": 14.071079165418809,
+        "music_coverage_100ms": -0.048387096774193505,
+        "mean_joint_speed": 0.24547815322875977,
+        "rms_acceleration": 2.633711814880371,
+        "rms_jerk": 108.17644676473898,
+        "root_travel": 4.905725955963135
+      },
+      "before_hits": 13,
+      "after_hits": 9,
+      "music_beat_bins": 62,
+      "changed_code_fraction": 0.7788104089219331
+    },
+    {
+      "song": "mJS3",
+      "start": 2,
+      "split": "held_out_from_rl",
+      "frames": 2160,
+      "initial_codes": [
+        179,
+        387
+      ],
+      "keys": [
+        "mJS3_I2_supervised",
+        "mJS3_I2_epoch5"
+      ],
+      "before": {
+        "mean_reward": 3.1111111640930176,
+        "hit_fraction": 0.1774193548387097,
+        "motion_to_music_ms": 220.96774193548387,
+        "music_coverage_100ms": 0.2903225806451613,
+        "mean_joint_speed": 0.5556222796440125,
+        "rms_acceleration": 7.807971000671387,
+        "rms_jerk": 340.1726441524579,
+        "root_travel": 8.444295883178711
+      },
+      "after": {
+        "mean_reward": 3.1481480598449707,
+        "hit_fraction": 0.1935483870967742,
+        "motion_to_music_ms": 220.6896551724138,
+        "music_coverage_100ms": 0.3225806451612903,
+        "mean_joint_speed": 0.7357845306396484,
+        "rms_acceleration": 10.357637405395508,
+        "rms_jerk": 416.22674757723564,
+        "root_travel": 12.868179321289062
+      },
+      "delta": {
+        "mean_reward": 0.037036895751953125,
+        "hit_fraction": 0.016129032258064502,
+        "motion_to_music_ms": -0.2780867630700641,
+        "music_coverage_100ms": 0.032258064516129004,
+        "mean_joint_speed": 0.180162250995636,
+        "rms_acceleration": 2.549666404724121,
+        "rms_jerk": 76.05410342477774,
+        "root_travel": 4.423883438110352
+      },
+      "before_hits": 11,
+      "after_hits": 12,
+      "music_beat_bins": 62,
+      "changed_code_fraction": 0.9089219330855018
+    },
+    {
+      "song": "mKR2",
+      "start": 1,
+      "split": "held_out_from_rl",
+      "frames": 2880,
+      "initial_codes": [
+        436,
+        289
+      ],
+      "keys": [
+        "mKR2_I1_supervised",
+        "mKR2_I1_epoch5"
+      ],
+      "before": {
+        "mean_reward": 3.527777671813965,
+        "hit_fraction": 0.29333333333333333,
+        "motion_to_music_ms": 282.3232323232323,
+        "music_coverage_100ms": 0.4,
+        "mean_joint_speed": 0.25460800528526306,
+        "rms_acceleration": 2.8226370811462402,
+        "rms_jerk": 142.8639641748199,
+        "root_travel": 38.374515533447266
+      },
+      "after": {
+        "mean_reward": 3.527777671813965,
+        "hit_fraction": 0.29333333333333333,
+        "motion_to_music_ms": 282.3232323232323,
+        "music_coverage_100ms": 0.4,
+        "mean_joint_speed": 0.25460800528526306,
+        "rms_acceleration": 2.8226370811462402,
+        "rms_jerk": 142.8639641748199,
+        "root_travel": 38.374515533447266
+      },
+      "delta": {
+        "mean_reward": 0.0,
+        "hit_fraction": 0.0,
+        "motion_to_music_ms": 0.0,
+        "music_coverage_100ms": 0.0,
+        "mean_joint_speed": 0.0,
+        "rms_acceleration": 0.0,
+        "rms_jerk": 0.0,
+        "root_travel": 0.0
+      },
+      "before_hits": 22,
+      "after_hits": 22,
+      "music_beat_bins": 75,
+      "changed_code_fraction": 0.0
+    },
+    {
+      "song": "mKR2",
+      "start": 2,
+      "split": "held_out_from_rl",
+      "frames": 2880,
+      "initial_codes": [
+        179,
+        387
+      ],
+      "keys": [
+        "mKR2_I2_supervised",
+        "mKR2_I2_epoch5"
+      ],
+      "before": {
+        "mean_reward": 3.444444417953491,
+        "hit_fraction": 0.25333333333333335,
+        "motion_to_music_ms": 252.4904214559387,
+        "music_coverage_100ms": 0.37333333333333335,
+        "mean_joint_speed": 0.5721006393432617,
+        "rms_acceleration": 7.7704691886901855,
+        "rms_jerk": 330.93664224673694,
+        "root_travel": 15.624809265136719
+      },
+      "after": {
+        "mean_reward": 3.527777671813965,
+        "hit_fraction": 0.29333333333333333,
+        "motion_to_music_ms": 249.45054945054943,
+        "music_coverage_100ms": 0.4533333333333333,
+        "mean_joint_speed": 0.6307356953620911,
+        "rms_acceleration": 8.232855796813965,
+        "rms_jerk": 354.93835839970114,
+        "root_travel": 13.402019500732422
+      },
+      "delta": {
+        "mean_reward": 0.08333325386047363,
+        "hit_fraction": 0.03999999999999998,
+        "motion_to_music_ms": -3.0398720053892703,
+        "music_coverage_100ms": 0.07999999999999996,
+        "mean_joint_speed": 0.058635056018829346,
+        "rms_acceleration": 0.4623866081237793,
+        "rms_jerk": 24.001716152964207,
+        "root_travel": -2.222789764404297
+      },
+      "before_hits": 19,
+      "after_hits": 22,
+      "music_beat_bins": 75,
+      "changed_code_fraction": 0.7688022284122563
+    }
+  ],
+  "clips": [
+    {
+      "selection": "largest",
+      "file": "largest_mJB5_I1.mp4",
+      "song": "mJB5",
+      "start": 1,
+      "reward_delta": 0.18099546432495117
+    },
+    {
+      "selection": "middle",
+      "file": "middle_mKR2_I1.mp4",
+      "song": "mKR2",
+      "start": 1,
+      "reward_delta": 0.0
+    },
+    {
+      "selection": "smallest",
+      "file": "smallest_mJB5_I2.mp4",
+      "song": "mJB5",
+      "start": 2,
+      "reward_delta": -0.4072399139404297
+    },
+    {
+      "selection": "reward_and_jerk_up",
+      "file": "reward_and_jerk_up_mJS3_I2.mp4",
+      "song": "mJS3",
+      "start": 2,
+      "reward_delta": 0.037036895751953125
+    }
+  ],
+  "common_diversity_frames": 1768,
+  "training_curves": [
+    {
+      "epoch": 1,
+      "sampled_reward": 2.8407557361360825,
+      "td_mse": 25.098503283759793
+    },
+    {
+      "epoch": 2,
+      "sampled_reward": 3.113207563364281,
+      "td_mse": 25.09786293820507
+    },
+    {
+      "epoch": 3,
+      "sampled_reward": 2.962264178533974,
+      "td_mse": 25.154637029524945
+    },
+    {
+      "epoch": 4,
+      "sampled_reward": 3.1154299158651217,
+      "td_mse": 25.055000112838105
+    },
+    {
+      "epoch": 5,
+      "sampled_reward": 3.081232492997199,
+      "td_mse": 25.023189453851607
+    }
+  ],
+  "evaluation_worker_seconds": 114.311056811,
+  "checkpoint_sha256": "69498660b8d110b29205a571e490c233a48251efc3437ffb545952ce5bb84079"
+}

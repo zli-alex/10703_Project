@@ -1,0 +1,63 @@
+{
+  "versions": {
+    "python": "3.8.10",
+    "executable": "/opt/legacy/bin/python",
+    "torch": "1.6.0+cu101",
+    "torch_cuda_build": "10.1",
+    "numpy": "1.19.5",
+    "cuda_available": true,
+    "gpu_name": "Tesla T4",
+    "gpu_capability": [
+      7,
+      5
+    ]
+  },
+  "decoder_sha256": "35670f42a3b3092438f73f0af3ace7b52e318a8b5c00b2b05c92078176b21716",
+  "decoder_missing": [],
+  "decoder_unexpected": [],
+  "reward_source_sha256": "b661259fd88c4a9d9a4e0e1436f54a2a04d21c58cbb52593974ca4074d16f471",
+  "input_manifest": {
+    "frames": [
+      120,
+      360
+    ],
+    "seconds": [
+      2,
+      6
+    ],
+    "fps": 60,
+    "bin_frames": 8,
+    "song": "mHO5",
+    "source_run": "smokeB-20261106T204747Z",
+    "input_sha256": "f293e5cac2f0631cdac157fa25490797936429bf5d2227b2cd5ebcadce074a31",
+    "source_record_sha256": "265593173d455e4c227ba2c5dd4464f211104113f05ce95a3c4192ed490557a4",
+    "generated_raw_sha256": "5f61d24c2b45526ed1086238340c59f283e478599786153e8b8387e9f601239a",
+    "real_coordinates": "Root-relative non-root joints, forward root displacement per frame in channels 0:3 (not velocity per second).",
+    "reconstruction": "Decode full 54-code real sequence cached during supervised smoke encoding of 432 padded frames; score only valid frames 120:360.",
+    "repetitive": "Repeat source generated frames 120:240 twice; seam at native frame240 (4 s), unsmoothed.",
+    "nearly_stationary": "Real pose at frame120, fixed root, rigid yaw amplitude0.5degrees at0.5Hz; phase zero at audit origin.",
+    "scoring_context": "Released reward called on cropped 240-frame controls. Gaussian smoothing sees crop boundaries; no full-rollout context. This is a reward-function audit, not exact replay of RL minibatch decoding (typically224 frames).",
+    "norm_checks": {
+      "upper": 0.06739737093448639,
+      "lower": 0.18233776092529297
+    }
+  },
+  "body_rate_primary": 0,
+  "scoring_seconds": 0.011538037000001111,
+  "total_seconds": 9.192110182,
+  "peak_allocated_bytes": 272767488,
+  "finite_total_per_control": {
+    "Real": true,
+    "Reconstructed": true,
+    "Generated": true,
+    "Shifted": true,
+    "Repetitive": true,
+    "Stationary": true,
+    "Nearly stationary": true
+  },
+  "degenerate_zero_geometry_probe": {
+    "valid_pose": false,
+    "input_finite": true,
+    "nonfinite_reward_bins": 30
+  }
+}

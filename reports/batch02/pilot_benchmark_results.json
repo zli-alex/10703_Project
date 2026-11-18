@@ -1,0 +1,226 @@
+{
+  "provenance": {
+    "baseline_sha256": {
+      "policy": "ed84ccd47d861c9b8a8a61a60a67aa3b8cbb59c928487daec1fdb65190b02da2",
+      "position_decoder": "35670f42a3b3092438f73f0af3ace7b52e318a8b5c00b2b05c92078176b21716"
+    },
+    "rollouts": [
+      {
+        "song_id": "mHO5",
+        "native_frames": 1920,
+        "codes": 240,
+        "initial_codes": [
+          436,
+          289
+        ],
+        "rollout_seconds": 3.4575275959999985
+      },
+      {
+        "song_id": "mJB5",
+        "native_frames": 1773,
+        "codes": 221,
+        "initial_codes": [
+          179,
+          387
+        ],
+        "rollout_seconds": 2.9388946659999995
+      },
+      {
+        "song_id": "mPO1",
+        "native_frames": 2720,
+        "codes": 340,
+        "initial_codes": [
+          383,
+          5
+        ],
+        "rollout_seconds": 4.480794606
+      }
+    ],
+    "batch_size": 64,
+    "split": "pilot",
+    "split_manifest_sha256": "34dce4a43f0f903a7a55fa6d14f0b8e9576d14feb890f6acff48f4425d81ca0e",
+    "upstream_commit": "cc90b98bff81c9709570db413c9610c2562e27ca"
+  },
+  "windows_by_song": {
+    "mHO5": 211,
+    "mJB5": 192,
+    "mPO1": 311
+  },
+  "updates": [
+    {
+      "minibatch": 0,
+      "branch": "actor",
+      "size": 64,
+      "loss": 0.7236449122428894,
+      "masked_reward_mean": 2.912087917327881,
+      "scoring_seconds": 0.9414162599999969,
+      "update_seconds": 1.792525058999999,
+      "heads": {
+        "actor": {
+          "changed": true,
+          "gradients": {
+            "present": 100,
+            "nonzero": 100
+          }
+        },
+        "critic": {
+          "changed": false,
+          "gradients": {
+            "present": 0,
+            "nonzero": 0
+          }
+        }
+      }
+    },
+    {
+      "minibatch": 1,
+      "branch": "actor",
+      "size": 64,
+      "loss": 1.0070866346359253,
+      "masked_reward_mean": 2.96875,
+      "scoring_seconds": 0.10962193900000017,
+      "update_seconds": 1.8061944190000006
+    },
+    {
+      "minibatch": 2,
+      "branch": "actor",
+      "size": 64,
+      "loss": 0.8609269857406616,
+      "masked_reward_mean": 2.96875,
+      "scoring_seconds": 0.11712980899999792,
+      "update_seconds": 1.8040067240000042
+    },
+    {
+      "minibatch": 3,
+      "branch": "actor",
+      "size": 64,
+      "loss": 0.9947154521942139,
+      "masked_reward_mean": 3.28125,
+      "scoring_seconds": 0.11763618999999892,
+      "update_seconds": 1.794756783000004
+    },
+    {
+      "minibatch": 4,
+      "branch": "actor",
+      "size": 64,
+      "loss": 0.5544650554656982,
+      "masked_reward_mean": 2.8125,
+      "scoring_seconds": 0.11540482099999849,
+      "update_seconds": 1.7985572990000023
+    },
+    {
+      "minibatch": 5,
+      "branch": "critic",
+      "size": 64,
+      "loss": 25.08531951904297,
+      "masked_reward_mean": 1.875,
+      "scoring_seconds": 0.10801302200000151,
+      "update_seconds": 1.1548513440000008,
+      "heads": {
+        "actor": {
+          "changed": true,
+          "gradients": {
+            "present": 100,
+            "nonzero": 0
+          }
+        },
+        "critic": {
+          "changed": true,
+          "gradients": {
+            "present": 52,
+            "nonzero": 52
+          }
+        }
+      }
+    },
+    {
+      "minibatch": 6,
+      "branch": "critic",
+      "size": 64,
+      "loss": 25.161792755126953,
+      "masked_reward_mean": 2.8125,
+      "scoring_seconds": 0.10892923699999812,
+      "update_seconds": 1.1599593900000045
+    },
+    {
+      "minibatch": 7,
+      "branch": "critic",
+      "size": 64,
+      "loss": 25.061559677124023,
+      "masked_reward_mean": 2.1875,
+      "scoring_seconds": 0.11356886400000121,
+      "update_seconds": 1.1580173779999967
+    },
+    {
+      "minibatch": 8,
+      "branch": "critic",
+      "size": 64,
+      "loss": 25.12223243713379,
+      "masked_reward_mean": 3.125,
+      "scoring_seconds": 0.11370449700000052,
+      "update_seconds": 1.156418416000001
+    },
+    {
+      "minibatch": 9,
+      "branch": "critic",
+      "size": 64,
+      "loss": 25.120525360107422,
+      "masked_reward_mean": 3.28125,
+      "scoring_seconds": 0.11425711700000107,
+      "update_seconds": 1.1572413949999998
+    },
+    {
+      "minibatch": 10,
+      "branch": "actor",
+      "size": 64,
+      "loss": 1.1743950843811035,
+      "masked_reward_mean": 3.125,
+      "scoring_seconds": 0.11076625900000181,
+      "update_seconds": 1.808726428,
+      "heads": {
+        "actor": {
+          "changed": true,
+          "gradients": {
+            "present": 100,
+            "nonzero": 100
+          }
+        },
+        "critic": {
+          "changed": true,
+          "gradients": {
+            "present": 52,
+            "nonzero": 0
+          }
+        }
+      }
+    },
+    {
+      "minibatch": 11,
+      "branch": "actor",
+      "size": 10,
+      "loss": -0.06275959312915802,
+      "masked_reward_mean": 2.0,
+      "scoring_seconds": 1.0664871279999986,
+      "update_seconds": 0.33315851300000077
+    }
+  ],
+  "dataset_seconds": 0.015772398000002852,
+  "train_wall_seconds": 24.569327953000002,
+  "checkpoint": {
+    "bytes": 1057385357,
+    "save_seconds": 2.7129009370000006,
+    "reload_and_compare_seconds": 3.418676828999999,
+    "reload_pass": true
+  },
+  "frozen_unchanged": {
+    "music_encoder": true,
+    "gpt_base": true,
+    "decoder": true
+  },
+  "worker_seconds": 61.453381586999996,
+  "peak_training_bytes": 12618461696,
+  "peak_allocated_bytes": 12618461696,
+  "torch": "1.6.0+cu101",
+  "gpu": "Tesla T4",
+  "data_loader_workers": 0
+}

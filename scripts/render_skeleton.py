@@ -28,6 +28,9 @@ def render_skeleton_mp4(
     audio_path: Path | None,
     frame_rate: int = 60,
     size: tuple[int, int] = (640, 480),
+    *,
+    projection_span: float | None = None,
+    label: str = '',
 ) -> dict:
     if joints_global.ndim != 3 or joints_global.shape[1:] != (24, 3):
         raise ValueError(f"Expected [T, 24, 3] joints, got {joints_global.shape}")
@@ -39,7 +42,7 @@ def render_skeleton_mp4(
     silent_path = output_path.with_name(output_path.stem + "_silent.mp4")
     width, height = size
     relative = joints_global - joints_global[:, :1, :]
-    span = float(np.percentile(np.abs(relative[:, :, :2]), 99))
+    span = float(np.percentile(np.abs(relative[:, :, :2]), 99)) if projection_span is None else projection_span
     span = max(span, 1e-4)
     scale = 0.38 * min(width, height) / span
 
@@ -69,6 +72,8 @@ def render_skeleton_mp4(
                 draw.ellipse((x - 3, y - 3, x + 3, y + 3), fill=(255, 210, 120))
             seconds = index / frame_rate
             draw.text((12, 12), f"t={seconds:05.2f}s  frame {index}", fill=(230, 230, 230))
+            if label:
+                draw.text((12, height - 24), label, fill=(230, 230, 230))
             process.stdin.write(image.tobytes())
     finally:
         process.stdin.close()

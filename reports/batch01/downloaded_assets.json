@@ -30,5 +30,37 @@
     "bytes": 18130668,
     "sha256": "6bd678d47b8996e3a93e3bfce4d15e82eb58edeed50b2d611edac644d67535a5",
     "zip_crc_verified": true
+  },
+  {
+    "archive": "preprocessed_data",
+    "member": "data/aistpp_test_full_wav/gPO_sBM_cAll_d10_mPO1_ch01.json",
+    "path": "assets/preprocessed_data/data/aistpp_test_full_wav/gPO_sBM_cAll_d10_mPO1_ch01.json",
+    "bytes": 26744161,
+    "sha256": "ba61ef59319d5f9c28543f28a4f32e293573a49214331803ff5258373d214efc",
+    "zip_crc_verified": true
+  },
+  {
+    "archive": "preprocessed_data",
+    "member": "data/aistpp_test_full_wav/gBR_sBM_cAll_d04_mBR0_ch01.json",
+    "path": "assets/preprocessed_data/data/aistpp_test_full_wav/gBR_sBM_cAll_d04_mBR0_ch01.json",
+    "bytes": 32466448,
+    "sha256": "c66610bdf45296fd55a03cacfd4cccb86913f1341014237b829a299952c9c198",
+    "zip_crc_verified": true
+  },
+  {
+    "archive": "preprocessed_data",
+    "member": "data/aistpp_test_full_wav/gJS_sBM_cAll_d01_mJS3_ch01.json",
+    "path": "assets/preprocessed_data/data/aistpp_test_full_wav/gJS_sBM_cAll_d01_mJS3_ch01.json",
+    "bytes": 21289004,
+    "sha256": "308446fc2d8d8f20f42b6db91fd83da3a683fe1ade83f3d41069079611f66926",
+    "zip_crc_verified": true
+  },
+  {
+    "archive": "preprocessed_data",
+    "member": "data/aistpp_test_full_wav/gKR_sBM_cAll_d28_mKR2_ch01.json",
+    "path": "assets/preprocessed_data/data/aistpp_test_full_wav/gKR_sBM_cAll_d28_mKR2_ch01.json",
+    "bytes": 28273747,
+    "sha256": "2aba8e885faed4979bcc91e4a98a468abb6c6e89dab889e68dbb957280254812",
+    "zip_crc_verified": true
   }
 ]

@@ -63,3 +63,7 @@ The released test loader always appends one extra `music_move` block before the
 right-hand zeros. For this 1,200-frame crop and `music_move` 1, the padded music
 length is 1,281 rather than 1,280. Integer division in `sample` still yields
 150 codes and 1,200 decoded frames. The extra frame is preserved, not removed.
+
+## Reward audit dependency
+
+Step D adds SciPy1.5.4 to the legacy Python3.8 interpreter before local-file mounts. The released reward module is imported unchanged by file path. Primary body weight remains zero; a separate rate-one call exposes the unweighted body diagnostic. No algorithm patch was applied.

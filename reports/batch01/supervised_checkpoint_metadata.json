@@ -1,0 +1,5583 @@
+{
+  "checkpoint": "assets/bailandopp/cc_gpt_music_trans/ckpt/epoch_400.pt",
+  "checkpoint_keys": [
+    "model",
+    "config",
+    "epoch"
+  ],
+  "stored_epoch": 440,
+  "config": {
+    "structure": {
+      "name": "SepVQVAER",
+      "up_half": {
+        "levels": 1,
+        "downs_t": [
+          3
+        ],
+        "strides_t": [
+          2
+        ],
+        "emb_width": 512,
+        "l_bins": 512,
+        "l_mu": 0.99,
+        "commit": 0.02,
+        "hvqvae_multipliers": [
+          1
+        ],
+        "width": 512,
+        "depth": 3,
+        "m_conv": 1.0,
+        "dilation_growth_rate": 3,
+        "sample_length": 240,
+        "use_bottleneck": true,
+        "joint_channel": 3,
+        "vqvae_reverse_decoder_dilation": true,
+        "dilation_cycle": null
+      },
+      "down_half": {
+        "levels": 1,
+        "downs_t": [
+          3
+        ],
+        "strides_t": [
+          2
+        ],
+        "emb_width": 512,
+        "l_bins": 512,
+        "l_mu": 0.99,
+        "commit": 0.02,
+        "hvqvae_multipliers": [
+          1
+        ],
+        "width": 512,
+        "depth": 3,
+        "m_conv": 1.0,
+        "dilation_growth_rate": 3,
+        "sample_length": 240,
+        "use_bottleneck": true,
+        "joint_channel": 3,
+        "vqvae_reverse_decoder_dilation": true,
+        "dilation_cycle": null
+      },
+      "use_bottleneck": true,
+      "joint_channel": 3
+    },
+    "structure_generate": {
+      "name": "CrossCondGPT2MW",
+      "block_size": 29,
+      "music_trans": {
+        "window_size": 11,
+        "n_music": 55,
+        "embd_pdrop": 0.1,
+        "resid_pdrop": 0.1,
+        "attn_pdrop": 0.1,
+        "n_layer": 3,
+        "n_embd": 768,
+        "downsample_rate": 8,
+        "block_size": 29,
+        "n_head": 12,
+        "n_music_emb": 768
+      },
+      "base": {
+        "embd_pdrop": 0.1,
+        "resid_pdrop": 0.1,
+        "attn_pdrop": 0.1,
+        "vocab_size_up": 512,
+        "vocab_size_down": 512,
+        "block_size": 29,
+        "n_layer": 6,
+        "n_head": 12,
+        "n_embd": 768,
+        "n_music": 768,
+        "n_music_emb": 768
+      },
+      "head": {
+        "embd_pdrop": 0.1,
+        "resid_pdrop": 0.1,
+        "attn_pdrop": 0.1,
+        "vocab_size": 512,
+        "block_size": 29,
+        "n_layer": 6,
+        "n_head": 12,
+        "n_embd": 768,
+        "vocab_size_up": 512,
+        "vocab_size_down": 512
+      },
+      "n_music": 55,
+      "n_music_emb": 768
+    },
+    "loss_weight": {
+      "mse_weight": 1
+    },
+    "optimizer": {
+      "type": "Adam",
+      "kwargs": {
+        "lr": 0.0003,
+        "betas": [
+          0.5,
+          0.999
+        ],
+        "weight_decay": 0
+      },
+      "schedular_kwargs": {
+        "milestones": [
+          250,
+          400
+        ],
+        "gamma": 0.1
+      }
+    },
+    "data": {
+      "name": "aist",
+      "train_dir": "/mnt/lustre/lisiyao1/dance/dance2/DanceRevolution/data/aistpp_train_wav",
+      "test_dir": "/mnt/lustre/lisiyao1/dance/dance2/DanceRevolution/data/aistpp_test_full_wav",
+      "seq_len": 240,
+      "data_type": "None"
+    },
+    "testing": {
+      "height": 540,
+      "width": 960,
+      "ckpt_epoch": 440
+    },
+    "vqvae_weight": "/mnt/lustressd/lisiyao1/dance_experiements/experiments/sep_vqvae_root_global_vel_wav_acc_batch8_0.9/ckpt/epoch_500.pt",
+    "expname": "music_ccgpt2_wav_bsz_32_3e-4_beta0.5_len240_external_wav_music_trans_full",
+    "epoch": 500,
+    "batch_size": 32,
+    "demo": true,
+    "save_per_epochs": 20,
+    "test_freq": 20,
+    "log_per_updates": 1,
+    "seed": 42,
+    "rotmat": false,
+    "cuda": true,
+    "global_vel": true,
+    "ds_rate": 8,
+    "move": 8,
+    "wav_padding": 5,
+    "external_wav": "/mnt/lustressd/lisiyao1/data/aistpp_music/aistpp_music_feat_60fps",
+    "external_wav_rate": 1,
+    "music_ds_rate": 1,
+    "music_relative_rate": 1,
+    "music_normalize": false,
+    "config": "configs/music_cross_cond_gpt2_dim768_wav_new_len240_3e-4_external_wav_music_trans.yaml",
+    "train": true,
+    "eval": false,
+    "visgt": false,
+    "anl": false,
+    "sample": false
+  },
+  "state_entries": 269,
+  "state_families": {
+    "music_trans": 56,
+    "gpt_base": 107,
+    "gpt_head": 106
+  },
+  "tensor_elements_including_buffers": 113853996,
+  "storage_size_checks_passed": true,
+  "model_load_tested": false,
+  "tensors": {
+    "module.music_trans.pos_emb": {
+      "kind": "tensor",
+      "shape": [
+        1,
+        312,
+        768
+      ],
+      "stride": [
+        239616,
+        768,
+        1
+      ],
+      "numel": 239616,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912267088",
+        "device": "cuda:0",
+        "elements": 239616
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.cond_emb.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        55
+      ],
+      "stride": [
+        55,
+        1
+      ],
+      "numel": 42240,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010911908096",
+        "device": "cuda:0",
+        "elements": 42240
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.cond_emb.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010911931376",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.0.ln1.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010911931472",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.0.ln1.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912107024",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.0.ln2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912107120",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.0.ln2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912107216",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.0.attn.mask": {
+      "kind": "tensor",
+      "shape": [
+        1,
+        1,
+        312,
+        312
+      ],
+      "stride": [
+        97344,
+        97344,
+        312,
+        1
+      ],
+      "numel": 97344,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912136944",
+        "device": "cuda:0",
+        "elements": 97344
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.0.attn.key.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912120144",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.0.attn.key.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912120240",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.0.attn.query.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912120336",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.0.attn.query.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912124080",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.0.attn.value.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912128880",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.0.attn.value.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912132592",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.0.attn.proj.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912133152",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.0.attn.proj.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912136848",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.0.mlp.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        3072,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912137040",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.0.mlp.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        3072
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 3072,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912142592",
+        "device": "cuda:0",
+        "elements": 3072
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.0.mlp.2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        3072
+      ],
+      "stride": [
+        3072,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010807392224",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.0.mlp.2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010792014448",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.1.ln1.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912143104",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.1.ln1.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912143200",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.1.ln2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912145472",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.1.ln2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912173520",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.1.attn.mask": {
+      "kind": "tensor",
+      "shape": [
+        1,
+        1,
+        312,
+        312
+      ],
+      "stride": [
+        97344,
+        97344,
+        312,
+        1
+      ],
+      "numel": 97344,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912185424",
+        "device": "cuda:0",
+        "elements": 97344
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.1.attn.key.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912173616",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.1.attn.key.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912173712",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.1.attn.query.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912177232",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.1.attn.query.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912177328",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.1.attn.value.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912177424",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.1.attn.value.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010810133904",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.1.attn.proj.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912185232",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.1.attn.proj.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912185328",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.1.mlp.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        3072,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912193680",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.1.mlp.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        3072
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 3072,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010810152608",
+        "device": "cuda:0",
+        "elements": 3072
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.1.mlp.2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        3072
+      ],
+      "stride": [
+        3072,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912198912",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.1.mlp.2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912193776",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.2.ln1.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912193872",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.2.ln1.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010810129552",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.2.ln2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912198608",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.2.ln2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912224048",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.2.attn.mask": {
+      "kind": "tensor",
+      "shape": [
+        1,
+        1,
+        312,
+        312
+      ],
+      "stride": [
+        97344,
+        97344,
+        312,
+        1
+      ],
+      "numel": 97344,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912240592",
+        "device": "cuda:0",
+        "elements": 97344
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.2.attn.key.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912227760",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.2.attn.key.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912231440",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.2.attn.query.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912231536",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.2.attn.query.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912231632",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.2.attn.value.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912232080",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.2.attn.value.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912240016",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.2.attn.proj.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912240112",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.2.attn.proj.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912240208",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.2.mlp.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        3072,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912248528",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.2.mlp.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        3072
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 3072,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912249152",
+        "device": "cuda:0",
+        "elements": 3072
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.2.mlp.2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        3072
+      ],
+      "stride": [
+        3072,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912249248",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.blocks.2.mlp.2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912262864",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.downsample.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        6144
+      ],
+      "stride": [
+        6144,
+        1
+      ],
+      "numel": 4718592,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912262960",
+        "device": "cuda:0",
+        "elements": 4718592
+      },
+      "requires_grad": false
+    },
+    "module.music_trans.downsample.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912263056",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.pos_emb": {
+      "kind": "tensor",
+      "shape": [
+        1,
+        87,
+        768
+      ],
+      "stride": [
+        66816,
+        768,
+        1
+      ],
+      "numel": 66816,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010911572224",
+        "device": "cuda:0",
+        "elements": 66816
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.tok_emb_up.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 393216,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010810159248",
+        "device": "cuda:0",
+        "elements": 393216
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.tok_emb_down.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 393216,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912272208",
+        "device": "cuda:0",
+        "elements": 393216
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.cond_emb.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010810155232",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.cond_emb.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912272688",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.0.ln1.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912272784",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.0.ln1.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010923483888",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.0.ln2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912275824",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.0.ln2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912287024",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.0.attn.mask": {
+      "kind": "tensor",
+      "shape": [
+        1,
+        1,
+        29,
+        29
+      ],
+      "stride": [
+        841,
+        841,
+        29,
+        1
+      ],
+      "numel": 841,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912303568",
+        "device": "cuda:0",
+        "elements": 841
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.0.attn.key.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912290736",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.0.attn.key.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912294416",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.0.attn.query.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912294512",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.0.attn.query.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912294608",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.0.attn.value.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912295056",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.0.attn.value.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912302992",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.0.attn.proj.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912303088",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.0.attn.proj.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912303184",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.0.mlp.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        3072,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912315616",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.0.mlp.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        3072
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 3072,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912313184",
+        "device": "cuda:0",
+        "elements": 3072
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.0.mlp.2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        3072
+      ],
+      "stride": [
+        3072,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912313280",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.0.mlp.2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010911545120",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.1.ln1.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912314560",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.1.ln1.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912335632",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.1.ln2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010911579808",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.1.ln2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912335728",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.1.attn.mask": {
+      "kind": "tensor",
+      "shape": [
+        1,
+        1,
+        29,
+        29
+      ],
+      "stride": [
+        841,
+        841,
+        29,
+        1
+      ],
+      "numel": 841,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912357456",
+        "device": "cuda:0",
+        "elements": 841
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.1.attn.key.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912335824",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.1.attn.key.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010911605264",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.1.attn.query.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912346736",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.1.attn.query.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912354704",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.1.attn.value.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912354800",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.1.attn.value.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912354896",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.1.attn.proj.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912355296",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.1.attn.proj.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912356944",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.1.mlp.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        3072,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912358112",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.1.mlp.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        3072
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 3072,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912358016",
+        "device": "cuda:0",
+        "elements": 3072
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.1.mlp.2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        3072
+      ],
+      "stride": [
+        3072,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014027170800",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.1.mlp.2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014027170896",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.2.ln1.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010911631312",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.2.ln1.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014027172000",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.2.ln2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014027173696",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.2.ln2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014027174208",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.2.attn.mask": {
+      "kind": "tensor",
+      "shape": [
+        1,
+        1,
+        29,
+        29
+      ],
+      "stride": [
+        841,
+        841,
+        29,
+        1
+      ],
+      "numel": 841,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014055532912",
+        "device": "cuda:0",
+        "elements": 841
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.2.attn.key.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014046078320",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.2.attn.key.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014046082032",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.2.attn.query.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014048441968",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.2.attn.query.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014048445680",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.2.attn.value.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014050805616",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.2.attn.value.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014050809328",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.2.attn.proj.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014053169264",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.2.attn.proj.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014053172976",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.2.mlp.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        3072,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014055536720",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.2.mlp.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        3072
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 3072,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014055536624",
+        "device": "cuda:0",
+        "elements": 3072
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.2.mlp.2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        3072
+      ],
+      "stride": [
+        3072,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014055537136",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.2.mlp.2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014055537232",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.3.ln1.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010911644928",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.3.ln1.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014055538336",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.3.ln2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014055540032",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.3.ln2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014055540544",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.3.attn.mask": {
+      "kind": "tensor",
+      "shape": [
+        1,
+        1,
+        29,
+        29
+      ],
+      "stride": [
+        841,
+        841,
+        29,
+        1
+      ],
+      "numel": 841,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014083899248",
+        "device": "cuda:0",
+        "elements": 841
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.3.attn.key.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014074444656",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.3.attn.key.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014074448368",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.3.attn.query.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014076808304",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.3.attn.query.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014076812016",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.3.attn.value.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014079171952",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.3.attn.value.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014079175664",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.3.attn.proj.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014081535600",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.3.attn.proj.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014081539312",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.3.mlp.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        3072,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014083903056",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.3.mlp.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        3072
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 3072,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014083902960",
+        "device": "cuda:0",
+        "elements": 3072
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.3.mlp.2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        3072
+      ],
+      "stride": [
+        3072,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014083903472",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.3.mlp.2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014083903568",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.4.ln1.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010810163168",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.4.ln1.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014083904672",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.4.ln2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014083906368",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.4.ln2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014083906880",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.4.attn.mask": {
+      "kind": "tensor",
+      "shape": [
+        1,
+        1,
+        29,
+        29
+      ],
+      "stride": [
+        841,
+        841,
+        29,
+        1
+      ],
+      "numel": 841,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014112265584",
+        "device": "cuda:0",
+        "elements": 841
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.4.attn.key.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014102810992",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.4.attn.key.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014102814704",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.4.attn.query.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014105174640",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.4.attn.query.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014105178352",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.4.attn.value.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014107538288",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.4.attn.value.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014107542000",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.4.attn.proj.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014109901936",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.4.attn.proj.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014109905648",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.4.mlp.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        3072,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014112269392",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.4.mlp.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        3072
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 3072,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014112269296",
+        "device": "cuda:0",
+        "elements": 3072
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.4.mlp.2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        3072
+      ],
+      "stride": [
+        3072,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014112269808",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.4.mlp.2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014112269904",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.5.ln1.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912145264",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.5.ln1.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014112271008",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.5.ln2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014112272704",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.5.ln2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014112273216",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.5.attn.mask": {
+      "kind": "tensor",
+      "shape": [
+        1,
+        1,
+        29,
+        29
+      ],
+      "stride": [
+        841,
+        841,
+        29,
+        1
+      ],
+      "numel": 841,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014140631920",
+        "device": "cuda:0",
+        "elements": 841
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.5.attn.key.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014131177328",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.5.attn.key.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014131181040",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.5.attn.query.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014133540976",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.5.attn.query.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014133544688",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.5.attn.value.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014135904624",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.5.attn.value.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014135908336",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.5.attn.proj.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014138268272",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.5.attn.proj.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014138271984",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.5.mlp.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        3072,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014140635728",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.5.mlp.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        3072
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 3072,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014140635632",
+        "device": "cuda:0",
+        "elements": 3072
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.5.mlp.2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        3072
+      ],
+      "stride": [
+        3072,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014140636144",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_base.blocks.5.mlp.2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014140636240",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.0.ln1.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912272592",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.0.ln1.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014140637344",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.0.ln2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014140639632",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.0.ln2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014159540464",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.0.attn.mask": {
+      "kind": "tensor",
+      "shape": [
+        1,
+        1,
+        29,
+        29
+      ],
+      "stride": [
+        841,
+        841,
+        29,
+        1
+      ],
+      "numel": 841,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014168998768",
+        "device": "cuda:0",
+        "elements": 841
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.0.attn.key.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014159544176",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.0.attn.key.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014159547888",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.0.attn.query.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014161907824",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.0.attn.query.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014161911536",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.0.attn.value.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014164271472",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.0.attn.value.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014164275184",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.0.attn.proj.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014166635120",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.0.attn.proj.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014166638832",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.0.mlp.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        3072,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014169002576",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.0.mlp.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        3072
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 3072,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014169002480",
+        "device": "cuda:0",
+        "elements": 3072
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.0.mlp.2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        3072
+      ],
+      "stride": [
+        3072,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014169002992",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.0.mlp.2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014169003088",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.1.ln1.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010912313376",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.1.ln1.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014169004192",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.1.ln2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014169005888",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.1.ln2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014169006400",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.1.attn.mask": {
+      "kind": "tensor",
+      "shape": [
+        1,
+        1,
+        29,
+        29
+      ],
+      "stride": [
+        841,
+        841,
+        29,
+        1
+      ],
+      "numel": 841,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014197365104",
+        "device": "cuda:0",
+        "elements": 841
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.1.attn.key.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014187910512",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.1.attn.key.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014187914224",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.1.attn.query.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014190274160",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.1.attn.query.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014190277872",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.1.attn.value.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014192637808",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.1.attn.value.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014192641520",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.1.attn.proj.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014195001456",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.1.attn.proj.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014195005168",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.1.mlp.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        3072,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014197368912",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.1.mlp.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        3072
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 3072,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014197368816",
+        "device": "cuda:0",
+        "elements": 3072
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.1.mlp.2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        3072
+      ],
+      "stride": [
+        3072,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014197369328",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.1.mlp.2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014197369424",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.2.ln1.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014027170992",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.2.ln1.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014197370528",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.2.ln2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014197372224",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.2.ln2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014197372736",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.2.attn.mask": {
+      "kind": "tensor",
+      "shape": [
+        1,
+        1,
+        29,
+        29
+      ],
+      "stride": [
+        841,
+        841,
+        29,
+        1
+      ],
+      "numel": 841,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014225731440",
+        "device": "cuda:0",
+        "elements": 841
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.2.attn.key.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014216276848",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.2.attn.key.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014216280560",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.2.attn.query.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014218640496",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.2.attn.query.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014218644208",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.2.attn.value.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014221004144",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.2.attn.value.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014221007856",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.2.attn.proj.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014223367792",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.2.attn.proj.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014223371504",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.2.mlp.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        3072,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014225735248",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.2.mlp.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        3072
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 3072,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014225735152",
+        "device": "cuda:0",
+        "elements": 3072
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.2.mlp.2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        3072
+      ],
+      "stride": [
+        3072,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014225735664",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.2.mlp.2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014225735760",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.3.ln1.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014055541024",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.3.ln1.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014225736864",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.3.ln2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014225738560",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.3.ln2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014225739072",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.3.attn.mask": {
+      "kind": "tensor",
+      "shape": [
+        1,
+        1,
+        29,
+        29
+      ],
+      "stride": [
+        841,
+        841,
+        29,
+        1
+      ],
+      "numel": 841,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014254097776",
+        "device": "cuda:0",
+        "elements": 841
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.3.attn.key.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014244643184",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.3.attn.key.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014244646896",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.3.attn.query.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014247006832",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.3.attn.query.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014247010544",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.3.attn.value.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014249370480",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.3.attn.value.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014249374192",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.3.attn.proj.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014251734128",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.3.attn.proj.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014251737840",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.3.mlp.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        3072,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014254101584",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.3.mlp.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        3072
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 3072,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014254101488",
+        "device": "cuda:0",
+        "elements": 3072
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.3.mlp.2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        3072
+      ],
+      "stride": [
+        3072,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014254102000",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.3.mlp.2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014254102096",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.4.ln1.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010911883120",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.4.ln1.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014254103200",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.4.ln2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014254104896",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.4.ln2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014254105408",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.4.attn.mask": {
+      "kind": "tensor",
+      "shape": [
+        1,
+        1,
+        29,
+        29
+      ],
+      "stride": [
+        841,
+        841,
+        29,
+        1
+      ],
+      "numel": 841,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014282464112",
+        "device": "cuda:0",
+        "elements": 841
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.4.attn.key.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014273009520",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.4.attn.key.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014273013232",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.4.attn.query.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014275373168",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.4.attn.query.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014275376880",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.4.attn.value.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014277736816",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.4.attn.value.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014277740528",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.4.attn.proj.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014280100464",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.4.attn.proj.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014280104176",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.4.mlp.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        3072,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014282467920",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.4.mlp.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        3072
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 3072,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014282467824",
+        "device": "cuda:0",
+        "elements": 3072
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.4.mlp.2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        3072
+      ],
+      "stride": [
+        3072,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014282468336",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.4.mlp.2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014282468432",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.5.ln1.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140010911836784",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.5.ln1.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014282469536",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.5.ln2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014282471232",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.5.ln2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014282471744",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.5.attn.mask": {
+      "kind": "tensor",
+      "shape": [
+        1,
+        1,
+        29,
+        29
+      ],
+      "stride": [
+        841,
+        841,
+        29,
+        1
+      ],
+      "numel": 841,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014310830448",
+        "device": "cuda:0",
+        "elements": 841
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.5.attn.key.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014301375856",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.5.attn.key.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014301379568",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.5.attn.query.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014303739504",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.5.attn.query.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014303743216",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.5.attn.value.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014306103152",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.5.attn.value.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014306106864",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.5.attn.proj.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 589824,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014308466800",
+        "device": "cuda:0",
+        "elements": 589824
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.5.attn.proj.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014308470512",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.5.mlp.0.weight": {
+      "kind": "tensor",
+      "shape": [
+        3072,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014310834256",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.5.mlp.0.bias": {
+      "kind": "tensor",
+      "shape": [
+        3072
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 3072,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014310834160",
+        "device": "cuda:0",
+        "elements": 3072
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.5.mlp.2.weight": {
+      "kind": "tensor",
+      "shape": [
+        768,
+        3072
+      ],
+      "stride": [
+        3072,
+        1
+      ],
+      "numel": 2359296,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014310834672",
+        "device": "cuda:0",
+        "elements": 2359296
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.blocks.5.mlp.2.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014310834768",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.ln_f.weight": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014083903664",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.ln_f.bias": {
+      "kind": "tensor",
+      "shape": [
+        768
+      ],
+      "stride": [
+        1
+      ],
+      "numel": 768,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014310835872",
+        "device": "cuda:0",
+        "elements": 768
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.head_up.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 393216,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014310837568",
+        "device": "cuda:0",
+        "elements": 393216
+      },
+      "requires_grad": false
+    },
+    "module.gpt_head.head_down.weight": {
+      "kind": "tensor",
+      "shape": [
+        512,
+        768
+      ],
+      "stride": [
+        768,
+        1
+      ],
+      "numel": 393216,
+      "storage_offset": 0,
+      "storage": {
+        "kind": "storage",
+        "dtype": "float32",
+        "key": "140014310838080",
+        "device": "cuda:0",
+        "elements": 393216
+      },
+      "requires_grad": false
+    }
+  }
+}

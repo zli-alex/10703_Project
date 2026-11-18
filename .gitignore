@@ -25,6 +25,11 @@ runs/
 !.env.example
 .modal.toml
 
+# Account-specific billing snapshots; sanitized cost ledgers remain shareable.
+reports/batch01/modal_account.json
+reports/batch01/*_billing_snapshot.json
+reports/batch01/batch01_billing_detail.json
+
 # Transient inventory bookkeeping
 .asset_inventory.lock
 *.json.tmp

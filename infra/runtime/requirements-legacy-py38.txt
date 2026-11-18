@@ -2,6 +2,7 @@
 # Torch is the historical Bailando++ pin. The wheel bundles the CUDA 10.1 runtime.
 pip==24.0
 numpy==1.19.5
+scipy==1.5.4
 PyYAML==5.4.1
 easydict==1.9
 tqdm==4.64.1

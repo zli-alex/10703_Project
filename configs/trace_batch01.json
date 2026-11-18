@@ -1,0 +1,19 @@
+{
+  "source_run": "smokeB-20261106T204747Z",
+  "song": "mHO5",
+  "window_starts_codes": [
+    0,
+    20
+  ],
+  "window_length_codes": 30,
+  "music_frames_per_code": 8,
+  "music_context_frames": 40,
+  "fps": 60,
+  "critic_initialization_seed": 42,
+  "critic_status": "newly initialized diagnostic critic, not trained",
+  "optimizer_steps": 0,
+  "input_sha256": "42073f984a6f06a9d0731e13117f129d2a10a00ccb617691fc24c46e560fd6f3",
+  "cached_codes_sha256": "2ac5e595d9a577252558afe246841b8cebbd9ee78039b72d91db73b0c8afa88e",
+  "cached_raw_sha256": "5f61d24c2b45526ed1086238340c59f283e478599786153e8b8387e9f601239a",
+  "scope": "Replay cached supervised trajectory through released training dataset and forward/reward paths; not a regenerated RL rollout. Supervised initialization retains root; training initialization zeros root."
+}

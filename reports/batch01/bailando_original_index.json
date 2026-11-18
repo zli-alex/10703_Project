@@ -1,0 +1,337 @@
+{
+  "source": {
+    "drive_id": "1Fi0TIiBV6EQAQrBU0IOnlke2Nu4IcutC",
+    "name": "experiments.zip",
+    "reported_bytes": 1157842658
+  },
+  "members": [
+    {
+      "name": "experiments/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "experiments/sep_vqvae/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "experiments/sep_vqvae/.DS_Store",
+      "bytes": 6148,
+      "compressed_bytes": 272,
+      "crc32": "c11553d6",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "__MACOSX/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "__MACOSX/experiments/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "__MACOSX/experiments/sep_vqvae/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "__MACOSX/experiments/sep_vqvae/._.DS_Store",
+      "bytes": 120,
+      "compressed_bytes": 53,
+      "crc32": "38c0880b",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "experiments/sep_vqvae/ckpt/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "experiments/sep_vqvae/ckpt/.DS_Store",
+      "bytes": 6148,
+      "compressed_bytes": 232,
+      "crc32": "11a5e042",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "__MACOSX/experiments/sep_vqvae/ckpt/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "__MACOSX/experiments/sep_vqvae/ckpt/._.DS_Store",
+      "bytes": 120,
+      "compressed_bytes": 53,
+      "crc32": "38c0880b",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "experiments/sep_vqvae/ckpt/epoch_500.pt",
+      "bytes": 208929483,
+      "compressed_bytes": 193010838,
+      "crc32": "5865a535",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "__MACOSX/experiments/sep_vqvae/ckpt/._epoch_500.pt",
+      "bytes": 540,
+      "compressed_bytes": 393,
+      "crc32": "2670aff7",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "experiments/.DS_Store",
+      "bytes": 14340,
+      "compressed_bytes": 1983,
+      "crc32": "54b7b5ab",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "__MACOSX/experiments/._.DS_Store",
+      "bytes": 120,
+      "compressed_bytes": 53,
+      "crc32": "38c0880b",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "experiments/sep_vqvae_root/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "experiments/sep_vqvae_root/.DS_Store",
+      "bytes": 8196,
+      "compressed_bytes": 1188,
+      "crc32": "31670ccf",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "__MACOSX/experiments/sep_vqvae_root/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "__MACOSX/experiments/sep_vqvae_root/._.DS_Store",
+      "bytes": 120,
+      "compressed_bytes": 53,
+      "crc32": "38c0880b",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "experiments/sep_vqvae_root/ckpt/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "experiments/sep_vqvae_root/ckpt/epoch_500.pt",
+      "bytes": 262495255,
+      "compressed_bytes": 242685976,
+      "crc32": "dc93dcb0",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "__MACOSX/experiments/sep_vqvae_root/ckpt/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "__MACOSX/experiments/sep_vqvae_root/ckpt/._epoch_500.pt",
+      "bytes": 545,
+      "compressed_bytes": 400,
+      "crc32": "d267bd85",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "experiments/actor_critic/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "experiments/actor_critic/.DS_Store",
+      "bytes": 6148,
+      "compressed_bytes": 444,
+      "crc32": "86baa525",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "__MACOSX/experiments/actor_critic/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "__MACOSX/experiments/actor_critic/._.DS_Store",
+      "bytes": 120,
+      "compressed_bytes": 53,
+      "crc32": "38c0880b",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "experiments/actor_critic/ckpt/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "experiments/actor_critic/ckpt/epoch_10.pt",
+      "bytes": 433360487,
+      "compressed_bytes": 399022264,
+      "crc32": "45c8f66e",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "__MACOSX/experiments/actor_critic/ckpt/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "__MACOSX/experiments/actor_critic/ckpt/._epoch_10.pt",
+      "bytes": 543,
+      "compressed_bytes": 398,
+      "crc32": "8e930c55",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "experiments/cc_motion_gpt/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "experiments/cc_motion_gpt/.DS_Store",
+      "bytes": 6148,
+      "compressed_bytes": 271,
+      "crc32": "c889a807",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "__MACOSX/experiments/cc_motion_gpt/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "__MACOSX/experiments/cc_motion_gpt/._.DS_Store",
+      "bytes": 120,
+      "compressed_bytes": 53,
+      "crc32": "38c0880b",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "experiments/cc_motion_gpt/ckpt/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "experiments/cc_motion_gpt/ckpt/epoch_400.pt",
+      "bytes": 348260673,
+      "compressed_bytes": 323109411,
+      "crc32": "d796ab2b",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "__MACOSX/experiments/cc_motion_gpt/ckpt/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000",
+      "method": 0,
+      "directory": true
+    },
+    {
+      "name": "__MACOSX/experiments/cc_motion_gpt/ckpt/._epoch_400.pt",
+      "bytes": 544,
+      "compressed_bytes": 396,
+      "crc32": "766e8a0b",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "experiments/cc_motion_gpt/ckpt/.DS_Store",
+      "bytes": 6148,
+      "compressed_bytes": 233,
+      "crc32": "e8971f02",
+      "method": 8,
+      "directory": false
+    },
+    {
+      "name": "__MACOSX/experiments/cc_motion_gpt/ckpt/._.DS_Store",
+      "bytes": 120,
+      "compressed_bytes": 53,
+      "crc32": "38c0880b",
+      "method": 8,
+      "directory": false
+    }
+  ]
+}
